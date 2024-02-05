@@ -2,7 +2,7 @@
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
-                <button type="button" class="btn btn-outline-primary btn-sm mb-0">Add  Donation Center</button>
+                <button type="button" class="btn btn-outline-primary btn-sm mb-0"><a href="/new_donation_center">Add  Donation Center</a></button>
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         <h6>Donation Centers table</h6>

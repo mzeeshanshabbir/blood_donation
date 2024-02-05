@@ -2,7 +2,7 @@
 <div class="container-fluid py-4">
     <div class="row">
         <div class="col-12">
-            <button type="button" class="btn btn-outline-primary btn-sm mb-0">Add Admin User</button>
+            <button  type="button" class="btn btn-outline-primary btn-sm mb-0"><a href="/new_user">Add Admin User</a></button>
             <div class="card mb-4">
                 <div class="card-header pb-0">
                     <h6>Admin Users table</h6>

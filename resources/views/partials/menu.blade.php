@@ -4,7 +4,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link  active" href="{{ route('dashboard') }}">
+                <a class="nav-link {{ request()->is('/')?'active':''}}" href="{{ route('dashboard') }}">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>shop </title>
@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="{{ route('show.user') }}">
+                <a class="nav-link {{request()->is('users')?'active':''}}" href="{{ route('show.user') }}">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>office</title>
@@ -45,7 +45,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link  " href="{{ route('show.donors') }}">
+                <a class="nav-link {{request()->is('donors')?'active':''}} " href="{{ route('show.donors') }}">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>office</title>
@@ -66,7 +66,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link  " href="{{ route('show.recipients') }}">
+                <a class="nav-link {{request()->is('recipients')?'active':''}} " href="{{ route('show.recipients') }}">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>office</title>
@@ -88,7 +88,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link  " href="{{ route('show.bloodtype') }}">
+                <a class="nav-link {{request()->is('blood_type')?'active':''}}" href="{{ route('show.bloodtype') }}">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>office</title>
@@ -110,7 +110,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link  " href="{{ route('show.donations') }}">
+                <a class="nav-link {{request()->is('donations')?'active':''}} " href="{{ route('show.donations') }}">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>office</title>
@@ -133,7 +133,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link  " href="{{ route('show.donationcenter') }}">
+                <a class="nav-link {{request()->is('donation_center')?'active':''}} " href="{{ route('show.donationcenter') }}">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>office</title>
@@ -156,7 +156,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link  " href="{{ route('show.donationrecord') }}">
+                <a class="nav-link  {{request()->is('donation_record')?'active':''}} " href="{{ route('show.donationrecord') }}">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>office</title>

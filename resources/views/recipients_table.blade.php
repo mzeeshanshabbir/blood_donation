@@ -2,7 +2,7 @@
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
-                <button type="button" class="btn btn-outline-primary btn-sm mb-0">Add New Recipient</button>
+                <button type="button" class="btn btn-outline-primary btn-sm mb-0"><a href="/new_recipient">Add New Recipient</a></button>
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         <h6>Recipients table</h6>

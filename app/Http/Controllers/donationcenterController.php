@@ -12,4 +12,19 @@ class donationcenterController extends Controller
         $center = DonationCenter::all();
         return view('donation_centers_table',['data' => $center]);
     }
+
+    public function addDonationCenter(Request $req){
+        $center = DonationCenter::create([
+            'center_name' => $req->center_name,
+            'location' => $req->location,
+            'contact_number' => $req->contact,
+            'email' => $req->email,
+        ]);
+
+        if($center){
+            return redirect()->route('show.donationcenter');
+        }else{
+            echo "Center Is Not Added";
+        }
+    }
 }

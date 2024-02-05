@@ -2,14 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\donor;
+
+use App\Models\Donor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class DonorController extends Controller
 {
     public function showDonors(){
-     $donors = donor::all();
+     $donors = Donor::all();
      return view('donors_table',['data' => $donors]);
     }
+
+
+
+    public function addDonor(Request $req){
+        $donors = Donor::create([
+            'first_name' => $req->fname,
+            'last_name' => $req->lname,
+            'date_of_birth' => $req->birth_date,
+            'gender' => $req->gender,
+            'contact_number' => $req->contact,
+            'email' => $req->email,
+            'blood_type_id' => $req->blood_type,
+            'last_donation_date' => $req->donation_date,
+            'address' => $req->address,
+        ]);
+        if($donors){
+            return redirect()->route('show.donors');
+        }else{
+            echo "Donor Is Not Added";
+        }
+    }
+
 }
