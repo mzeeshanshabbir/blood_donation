@@ -56,13 +56,13 @@ Route::get('/donation_record',[donationrecordController::class,'showdonationReco
 
 
 //Routes For Buttons.
-Route::view('/new_user','add_user');
-Route::view('/new_donor','add_donor');
-Route::view('/new_recipient','add_recipient');
-Route::view('/new_blood_type','add_blood_type');
-Route::view('/new_donation','add_donation');
-Route::view('/new_donation_center','add_donation_centers');
-Route::view('/new_donation_record','add_donation_record');
+Route::get('/new_user','add_user');
+Route::get('/new_donor',[DonorController::class,'DonorsForm']);
+Route::get('/new_recipient',[recipientController::class,'RecipientForm']);
+Route::get('/new_blood_type',[bloodtypeController::class,'BloodForm']);
+Route::get('/new_donation',[donationController::class,'DonationForm']);
+Route::get('/new_donation_center',[donationcenterController::class,'CenterForm']);
+Route::get('/new_donation_record',[donationrecordController::class,'RecordForm']);
 
 
 
@@ -76,7 +76,9 @@ Route::post('/add_donation_center',[donationcenterController::class,'addDonation
 Route::post('add_donation_record',[donationrecordController::class,'addDonationRecord'])->name('add.donation_record');
 
 
-Route::get('/data',[TestController::class,'profile']);
+
+//Testing Route.
+Route::get('/data',[TestController::class,'index']);
 
 
 

@@ -10,10 +10,10 @@ class Blood_type extends Model
 {
     use HasFactory;
 
-//     function DonorData(): HasOne
-//     {
-//        return $this->hasOne(Donor::class);
-//    }
+     function DonorData(): HasOne
+     {
+        return $this->hasOne(Donor::class);
+    }
 
 
     protected $fillable = [
@@ -21,8 +21,5 @@ class Blood_type extends Model
         'rh_factor',
     ];
 
-    public function user()
-    {
-        return $this->belongsTo(Donor::class);
-    }
+
 }

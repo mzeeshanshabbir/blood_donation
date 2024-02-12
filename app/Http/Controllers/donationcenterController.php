@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 class donationcenterController extends Controller
 {
+
+    public function CenterForm(){
+        return view('add_donation_centers');
+    }
     public function showDonationcenter(){
         $center = DonationCenter::all();
         return view('donation_centers_table',['data' => $center]);

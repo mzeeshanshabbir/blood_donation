@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class linkController extends Controller
 {
 
-    publuc function showregister(){
+    public function showregister(){
         return view('register');
 }
 

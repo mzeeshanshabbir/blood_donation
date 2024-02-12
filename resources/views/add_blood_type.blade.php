@@ -19,20 +19,17 @@
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Blood Group :</label>
                                         <select class="form-control" name="blood_group" >
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="AB">AB</option>
-                                            <option value="O">O</option>
+                                            <option value="A Positive">A Positive </option>
+                                            <option value="A Negative">A Negative </option>
+                                            <option value="B Positive">B Positive</option>
+                                            <option value="B Negative">B Negative</option>
+                                            <option value="AB Positive">AB Positive</option>
+                                            <option value="AB Negative">AB Negative</option>
+                                            <option value="O Positive">O Positive</option>
+                                            <option value="O Negative">O Negative</option>
                                         </select>
                                     </div>
 
-                                    <div class="input-group input-group-outline mb-3">
-                                        <label class="input-group input-group-outline mb-3">RH Factor :</label>
-                                        <select class="form-control" name="rh_factor" >
-                                            <option value="Positive">Positive</option>
-                                            <option value="Negative">Negative</option>
-                                        </select>
-                                    </div>
 
                                     <div class="input-group input-group-outline mb-3">
                                         <input type="submit" class="btn btn-lg bg-gradient-primary btn-lg mt-4 mb-0" >

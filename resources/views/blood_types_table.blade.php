@@ -14,7 +14,7 @@
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Blood Group</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">RH Factor</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Created At</th>
 
                                 </tr>
                                 </thead>
@@ -29,7 +29,7 @@
                                             {{ $blood->blood_group }}
                                         </td>
                                         <td class="align-middle">
-                                            {{ $blood->rh_factor}}
+                                            {{ $blood->created_at}}
                                         </td>
                                     </tr>
                                 @endforeach

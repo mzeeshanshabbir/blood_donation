@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
-//    function index(){
-//        return Donor::find(2)->DonorData->get();
-//    }
+
+
+    function index(){
+        return Donor::find(2)->DonorData->get();
+    }
 
 
 //    function index(){

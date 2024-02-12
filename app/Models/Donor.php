@@ -10,6 +10,10 @@ class Donor extends Model
 {
     use HasFactory;
 
+
+
+
+
     protected $fillable = [
       'first_name',
       'last_name',
@@ -22,20 +26,11 @@ class Donor extends Model
       'address',
 
     ];
-//    function DonorData(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-//    {
-//        return $this->belongsTo(Blood_type::class,'blood_type_id');
-//    }
-
-
-//    protected $primaryKey = 'id';
-//    function getBlood()
-//    {
-//        return $this->hasOne('App\Models\Blood_type','blood_type_id');
-//    }
-
-    public function profile()
+    function DonorData(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasOne(Blood_type::class);
+        return $this->belongsTo(Blood_type::class,'blood_type_id');
     }
+
+
+
 }

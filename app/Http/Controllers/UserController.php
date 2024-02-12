@@ -14,6 +14,7 @@ class UserController extends Controller
  }
 
  public function AddUser(Request $req){
+
      $users = User::create([
          'name' => $req->name,
          'email' => $req->email,
@@ -26,3 +27,6 @@ class UserController extends Controller
      }
  }
 }
+//$users = User::updateOrCreate(
+//    []
+//)

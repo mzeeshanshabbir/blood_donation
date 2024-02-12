@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 class donationController extends Controller
 {
+
+    public function DonationForm(){
+        return view('add_donation');
+    }
     public function showDonation(){
         $donations = Donation::all();
         return view('donations_table',['data' => $donations]);

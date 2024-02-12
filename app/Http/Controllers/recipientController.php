@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\DB;
 
 class recipientController extends Controller
 {
+
+    public function RecipientForm(){
+        return view('add_recipient');
+    }
+
+
     public function showRecipients(){
         $recipients = Recipient::all();
         return view('recipients_table',['data' => $recipients]);

@@ -17,16 +17,21 @@
                                 <br>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="input-group input-group-outline mb-3">Name :</label>
-                                    <input value="{{ old('name') }}" type="text" class="form-control border-l-4" name="name"  required="true">
+                                    <input value="{{ old('name') }}" type="text" class="form-control border-l-4" name="name"  >
                                 </div>
 
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="input-group input-group-outline mb-3 ">Email :</label>
-                                    <input value="{{old('email')}}" type="email"  class="form-control border-l-4" name="email"  required="true">
+                                    <input value="{{old('email')}}" type="email"  class="form-control border-l-4" name="email"  >
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="input-group input-group-outline mb-3">Password :</label>
-                                    <input value="{{old('password')}}"type="text" class="form-control" name="password"  required="true" maxlength="10" pattern="[0-9]+">
+                                    <input value="{{old('password')}}"type="password" class="form-control" name="password"  ">
+                                </div>
+
+                                <div class="input-group input-group-outline mb-3">
+                                    <label class="input-group input-group-outline mb-3">Confirm Password :</label>
+                                    <input value="{{old('confirm_password')}}"type="password" class="form-control" name="confirm_password"  ">
                                 </div>
 
                                 <div class="input-group input-group-outline mb-3">

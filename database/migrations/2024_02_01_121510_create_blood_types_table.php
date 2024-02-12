@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('blood_types', function (Blueprint $table) {
             $table->id();
             $table->string('blood_group');
-            $table->string('rh_factor');
             $table->timestamps();
         });
     }
@@ -25,5 +24,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('blood_types');
+        $table->dropcolumn('rh_factor');
+
     }
 };

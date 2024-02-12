@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\DB;
 
 class donationrecordController extends Controller
 {
+
+    public function RecordForm(){
+        return view('add_donation_record');
+    }
     public function showdonationRecord(){
           $records = DonationRecord::all();
         return view('donation_records_table',['data' => $records]);
