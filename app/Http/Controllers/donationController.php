@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blood_type;
 use App\Models\Donation;
+use App\Models\Donor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,7 +12,9 @@ class donationController extends Controller
 {
 
     public function DonationForm(){
-        return view('add_donation');
+        $donor = Donor::all();
+        $blood_type = Blood_type::all();
+        return view('add_donation',compact('donor','blood_type'));
     }
     public function showDonation(){
         $donations = Donation::all();

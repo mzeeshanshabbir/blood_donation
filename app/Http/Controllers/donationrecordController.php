@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 
-
 use App\Models\DonationRecord;
+use App\Models\Donation;
+use App\Models\Recipient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,7 +13,9 @@ class donationrecordController extends Controller
 {
 
     public function RecordForm(){
-        return view('add_donation_record');
+        $don_date = Donation::all();
+        $recip_date = Recipient::all();
+        return view('add_donation_record',compact('don_date','recip_date'));
     }
     public function showdonationRecord(){
           $records = DonationRecord::all();

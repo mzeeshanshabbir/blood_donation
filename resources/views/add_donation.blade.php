@@ -15,9 +15,14 @@
                                 <form method="POST" action="{{ route('add.donation') }}" class="p-3">
                                     @csrf
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="input-group input-group-outline mb-3"> Donor Id :</label>
-                                        <input value="{{ old('donor_id') }}" type="text" class="form-control border-l-4" name="donor_id"  required="true">
+                                        <label class="input-group input-group-outline mb-3">Donor :</label>
+                                        <select class="form-control" name="donor_id" >
+                                          @foreach($donor as $data)
+                                                <option value="{{$data->id}}">{{ $data->first_name }}   {{$data->last_name}} </option>
+                                            @endforeach
+                                        </select>
                                     </div>
+
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3"> Donation Date :</label>
@@ -26,8 +31,13 @@
 
 
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="input-group input-group-outline mb-3">Blood Type Id :</label>
-                                        <input value="{{old('blood_type')}}" type="text" class="form-control" name="blood_type"  required="true">
+                                        <label class="input-group input-group-outline mb-3">Blood Type :</label>
+                                        <select class="form-control" name="blood_type" >
+                                            @foreach($blood_type as $dataa )
+                                                <option value="{{$dataa->id}}">{{$dataa->blood_group}} </option>
+                                            @endforeach
+
+                                        </select>
                                     </div>
 
                                     <div class="input-group input-group-outline mb-3">

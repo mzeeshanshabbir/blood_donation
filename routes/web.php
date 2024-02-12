@@ -56,7 +56,7 @@ Route::get('/donation_record',[donationrecordController::class,'showdonationReco
 
 
 //Routes For Buttons.
-Route::get('/new_user','add_user');
+Route::get('/new_user',[UserController::class,'UserForm']);
 Route::get('/new_donor',[DonorController::class,'DonorsForm']);
 Route::get('/new_recipient',[recipientController::class,'RecipientForm']);
 Route::get('/new_blood_type',[bloodtypeController::class,'BloodForm']);

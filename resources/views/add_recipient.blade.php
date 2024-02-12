@@ -38,8 +38,15 @@
                                     </div>
 
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="input-group input-group-outline mb-3">Blood Type Id :</label>
-                                        <input value="{{old('blood_type')}}" type="text" class="form-control" name="blood_type"  required="true">
+                                        <label class="input-group input-group-outline mb-3">Blood Type :</label>
+
+                                        <select class="form-control" name="blood_type" >
+                                          @foreach($blood_type as $data )
+                                                <option value="{{$data->id}}">{{$data->blood_group}} </option>
+                                            @endforeach
+
+                                        </select>
+
                                     </div>
 
                                     <div class="input-group input-group-outline mb-3">

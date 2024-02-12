@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blood_type;
 use App\Models\Recipient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,7 +11,8 @@ class recipientController extends Controller
 {
 
     public function RecipientForm(){
-        return view('add_recipient');
+        $blood_type = Blood_type::all();
+        return view('add_recipient',compact('blood_type'));
     }
 
 

@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+
+    public function UserForm(){
+        return view('add_user');
+    }
  public function showUser(){
      $users = User::all();
      return view('users_table',['data' => $users]);

@@ -14,17 +14,24 @@
                             <div class="table-responsive p-0">
                                 <form method="POST" action="{{ route('add.donation_record') }}" class="p-3">
                                     @csrf
+
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="input-group input-group-outline mb-3"> Donation Id :</label>
-                                        <input value="{{ old('donor_id') }}" type="text" class="form-control border-l-4" name="donation_id"  required="true">
+                                        <label class="input-group input-group-outline mb-3">Donation Date:</label>
+                                        <select class="form-control" name="donation_id" >
+                                            @foreach( $don_date as  $data)
+                                                <option value="{{ $data->id}}">{{ $data->donation_date}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
 
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="input-group input-group-outline mb-3"> Recipient Id :</label>
-                                        <input value="{{old('donation_date')}}" type="text" class="form-control" name="recipient_id"  required="true" >
+                                        <label class="input-group input-group-outline mb-3">Recipient Name :</label>
+                                        <select class="form-control" name="recipient_id" >
+                                            @foreach( $recip_date as  $dataa)
+                                                <option value="{{ $dataa->id}}">{{ $dataa->first_name}}    {{$dataa->last_name}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
-
-
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Quantity Transfused :</label>
                                         <input value="{{old('blood_type')}}" type="number" class="form-control" name="quantity"  required="true">
