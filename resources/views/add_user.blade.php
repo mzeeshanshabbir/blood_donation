@@ -10,28 +10,65 @@
                             <h6 class="text-white text-capitalize ps-3">Add Admin User</h6>
                         </div>
                     </div>
+
                     <div class="card-body px-0 pb-2">
                         <div class="table-responsive p-0">
+{{--                            @if($errors->any())--}}
+{{--                                <ul class="alert alert-danger">--}}
+{{--                                    @foreach($errors->all() as $error)--}}
+{{--                                    <li>{{$error}}</li>--}}
+{{--                                    @endforeach--}}
+{{--                                </ul>--}}
+{{--                            @endif--}}
+
                             <form method="POST" action="{{route('add.user')}}" class="p-3">
                                 @csrf
                                 <br>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="input-group input-group-outline mb-3">Name :</label>
-                                    <input value="{{ old('name') }}" type="text" class="form-control border-l-4" name="name"  >
+                                    <input value="{{ old('name') }}" type="text" class="form-control border-l-4 @error('name') is-invalid @enderror" name="name"  >
+                                    <div class="input-group input-group-outline mb-3">
+                                    <span class="text-danger">
+                                        @error('name')
+                                        {{ $message }}
+                                        @enderror
+                                        </span>
+                                    </div>
                                 </div>
 
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="input-group input-group-outline mb-3 ">Email :</label>
-                                    <input value="{{old('email')}}" type="email"  class="form-control border-l-4" name="email"  >
+                                    <input value="{{old('email')}}" type="email"  class="form-control border-l-4 @error('email') is-invalid @enderror" name="email" >
+                                    <div class="input-group input-group-outline mb-3">
+                                    <span class="text-danger">
+                                        @error('email')
+                                        {{ $message }}
+                                        @enderror
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="input-group input-group-outline mb-3">Password :</label>
-                                    <input value="{{old('password')}}"type="password" class="form-control" name="password"  ">
+                                    <input value="{{old('password')}}" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  >
+                                    <div class="input-group input-group-outline mb-3">
+                                    <span class="text-danger">
+                                        @error('password')
+                                        {{ $message }}
+                                        @enderror
+                                        </span>
+                                    </div>
                                 </div>
 
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="input-group input-group-outline mb-3">Confirm Password :</label>
-                                    <input value="{{old('confirm_password')}}"type="password" class="form-control" name="confirm_password"  ">
+                                    <input value="{{old('confirm_password')}}" type="password" class="form-control @error('confirm_password') is-invalid @enderror" name="confirm_password"  >
+                                    <div class="input-group input-group-outline mb-3">
+                                    <span class="text-danger">
+                                        @error('confirm_password')
+                                        {{ $message }}
+                                        @enderror
+                                        </span>
+                                    </div>
                                 </div>
 
                                 <div class="input-group input-group-outline mb-3">

@@ -42,7 +42,14 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3 ">Quanitity ML :</label>
-                                        <input value="{{old('quantity')}}" type="number"  class="form-control border-l-4" name="quantity"  required="true">
+                                        <input value="{{old('quantity')}}" type="number"  class="form-control border-l-4 @error('quantity') is-invalid @enderror" name="quantity"  >
+                                        <div class="input-group input-group-outline mb-3">
+                                            <span class="text-danger">
+                                                @error('quantity')
+                                                {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
                                     </div>
 
                                     <div class="input-group input-group-outline mb-3">

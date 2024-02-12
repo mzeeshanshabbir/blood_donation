@@ -23,6 +23,17 @@ class DonorController extends Controller
 
 
     public function addDonor(Request $req){
+        $req->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'date_of_birth' => 'required|date',
+            'gender' => 'required',
+            'contact_number' => 'required',
+            'email' => 'required|email',
+            'blood_type_id' => 'required',
+            'last_donation_date' => 'required|date',
+            'address' => 'required',
+        ]);
         $donors = Donor::create([
             'first_name' => $req->fname,
             'last_name' => $req->lname,

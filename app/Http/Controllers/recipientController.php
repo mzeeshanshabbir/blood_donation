@@ -22,6 +22,19 @@ class recipientController extends Controller
     }
 
     public function addRecipient(Request $req){
+        $req->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'date_of_birth' => 'required|date',
+            'gender' => 'required',
+            'contact_number' => 'required|numeric',
+            'email' => 'required|email',
+            'blood_type_id' => 'required',
+            'required_units' => 'required|numeric',
+            'address' => 'required',
+            'hospital_name' => 'required',
+        ]);
+
         $recipients = Recipient::create([
             'first_name' => $req->fname,
             'last_name' => $req->lname,

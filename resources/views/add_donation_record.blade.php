@@ -17,7 +17,7 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Donation Date:</label>
-                                        <select class="form-control" name="donation_id" >
+                                        <select class="form-control @error('donation_id') is-invalid @enderror" name="donation_id" >
                                             @foreach( $don_date as  $data)
                                                 <option value="{{ $data->id}}">{{ $data->donation_date}}</option>
                                             @endforeach
@@ -26,7 +26,7 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Recipient Name :</label>
-                                        <select class="form-control" name="recipient_id" >
+                                        <select class="form-control" name="recipient_id " >
                                             @foreach( $recip_date as  $dataa)
                                                 <option value="{{ $dataa->id}}">{{ $dataa->first_name}}    {{$dataa->last_name}}</option>
                                             @endforeach
@@ -34,17 +34,31 @@
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Quantity Transfused :</label>
-                                        <input value="{{old('blood_type')}}" type="number" class="form-control" name="quantity"  required="true">
+                                        <input value="{{old('blood_type')}}" type="number" class="form-control @error('quantity') is-invalid @enderror" name="quantity"  >
+                                        <div class="input-group input-group-outline mb-3">
+                                            <span class="text-danger">
+                                                @error('quantity')
+                                                {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
                                     </div>
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3 ">Transfusion Date:</label>
-                                        <input value="{{old('quantity')}}" type="date"  class="form-control border-l-4" name="date"  required="true">
+                                        <input value="{{old('quantity')}}" type="date"  class="form-control border-l-4 @error('date') is-invalid @enderror" name="date"  >
+                                        <div class="input-group input-group-outline mb-3">
+                                            <span class="text-danger">
+                                                @error('date')
+                                                {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
                                     </div>
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Status:</label>
-                                        <select class="form-control" name="status" >
+                                        <select class="form-control @error('status') is-invalid @enderror" name="status" >
                                             <option value="Succesfull">Succesfull</option>
                                             <option value="Pending">Pending</option>
                                             <option value="Rejected">Rejected</option>
@@ -61,4 +75,5 @@
                 </div>
                 <div class="col-1"></div>
             </div>
+    </main>
 </x-app-layout>

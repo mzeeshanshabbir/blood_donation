@@ -18,7 +18,12 @@ class UserController extends Controller
  }
 
  public function AddUser(Request $req){
-
+        $req->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+            'confirm_password' => 'required' ,
+        ]);
      $users = User::create([
          'name' => $req->name,
          'email' => $req->email,

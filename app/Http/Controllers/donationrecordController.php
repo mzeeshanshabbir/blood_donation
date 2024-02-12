@@ -23,8 +23,15 @@ class donationrecordController extends Controller
     }
 
     public function addDonationRecord(Request $req){
+        $req->validate([
+            'donation_id' => 'required',
+            'recipient_id' => 'required',
+            'quantity_transfused' => 'required|numeric',
+            'transfusion_date' => 'required',
+            'transfusion_status' => 'required',
+        ]);
         $records =  DonationRecord::create([
-           'donation_id' => $req->donation_id,
+            'donation_id' => $req->donation_id,
             'recipient_id' => $req->recipient_id,
             'quantity_transfused' => $req->quantity,
             'transfusion_date' => $req->date,

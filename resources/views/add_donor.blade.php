@@ -16,25 +16,63 @@
                                     @csrf
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3"> Name :</label>
-                                        <input value="{{ old('fname') }}" type="text" class="form-control border-l-4" name="fname" placeholder="First Name"  required="true">
-                                        <input value="{{ old('lname') }}" type="text" class="form-control border-l-4" name="lname" placeholder="Last Name" required="true">
+                                        <input value="{{ old('fname') }}" type="text" class="form-control border-l-4 @error('fname') is-invalid @enderror" name="fname" placeholder="First Name">
+                                        <span class="text-danger">
+                                        @error('fname')
+                                            {{ $message }}
+                                            @enderror
+                                        </span>
+                                        <input value="{{ old('lname') }}" type="text" class="form-control border-l-4 @error('lname') is-invalid @enderror" name="lname" placeholder="Last Name">
+                                        <span class="text-danger">
+                                        @error('lname')
+                                            {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3 ">Date Of Birth :</label>
-                                        <input value="{{old('birth_date')}}" type="date"  class="form-control border-l-4" name="birth_date"  required="true">
+                                        <input value="{{old('birth_date')}}" type="date"  class="form-control border-l-4 @error('birth_date') is-invalid @enderror" name="birth_date"  >
+                                        <div class="input-group input-group-outline mb-3">
+                                    <span class="text-danger">
+                                        @error('birth_date')
+                                        {{ $message }}
+                                        @enderror
+                                        </span>
+                                        </div>
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Gender:</label>
-                                        <input value="{{old('gender')}}" type="text" class="form-control" name="gender"  required="true">
+                                        <input value="{{old('gender')}}" type="text" class="form-control @error('gender') is-invalid @enderror" name="gender"  >
+                                        <div class="input-group input-group-outline mb-3">
+                                    <span class="text-danger">
+                                        @error('gender')
+                                        {{ $message }}
+                                        @enderror
+                                        </span>
+                                        </div>
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Contact No:</label>
-                                        <input value="{{old('contact')}}" type="text" class="form-control" name="contact"  required="true" >
+                                        <input value="{{old('contact')}}" type="text" class="form-control @error('contact') is-invalid @enderror" name="contact" >
+                                        <div class="input-group input-group-outline mb-3">
+                                    <span class="text-danger">
+                                        @error('contact')
+                                        {{ $message }}
+                                        @enderror
+                                        </span>
+                                        </div>
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Email :</label>
-                                        <input value="{{old('email')}}" type="email" class="form-control" name="email"  required="true" >
+                                        <input value="{{old('email')}}" type="email" class="form-control @error('email') is-invalid @enderror" name="email"  >
+                                        <div class="input-group input-group-outline mb-3">
+                                    <span class="text-danger">
+                                        @error('email')
+                                        {{ $message }}
+                                        @enderror
+                                        </span>
+                                        </div>
                                     </div>
 
 
@@ -52,12 +90,26 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Last Donation Date :</label>
-                                        <input value="{{old('donation_date')}}" type="date" class="form-control" name="donation_date"  required="true" >
+                                        <input value="{{old('donation_date')}}" type="date" class="form-control @error('donation_date') is-invalid @enderror" name="donation_date"  >
+                                        <div class="input-group input-group-outline mb-3">
+                                    <span class="text-danger">
+                                        @error('donation_date')
+                                        {{ $message }}
+                                        @enderror
+                                        </span>
+                                        </div>
                                     </div>
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Address :</label>
-                                        <textarea value="{{old('address')}}" class="form-control" name="address"  required="true"></textarea>
+                                        <textarea value="{{old('address')}}" class="form-control @error('address') is-invalid @enderror" name="address"  ></textarea>
+                                        <div class="input-group input-group-outline mb-3">
+                                    <span class="text-danger">
+                                        @error('address')
+                                        {{ $message }}
+                                        @enderror
+                                        </span>
+                                        </div>
                                     </div>
 
                                     <div class="input-group input-group-outline mb-3">

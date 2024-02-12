@@ -22,6 +22,13 @@ class donationController extends Controller
     }
 
     public function addDonation(Request $req){
+        $req->validate([
+            'donor_id' => 'required' ,
+            'donation_date' => 'required|date',
+            'blood_type_id' => 'required',
+            'quantity_in_ml' => 'required|numeric',
+            'status' => 'required',
+        ]);
         $donations = Donation::create([
             'donor_id' => $req->donor_id,
             'donation_date' => $req->donation_date,

@@ -18,6 +18,12 @@ class donationcenterController extends Controller
     }
 
     public function addDonationCenter(Request $req){
+        $req->validate([
+            'center_name' => 'required',
+            'location' =>'required' ,
+            'contact_number' => 'required|numeric',
+            'email' => 'required|email',
+        ]);
         $center = DonationCenter::create([
             'center_name' => $req->center_name,
             'location' => $req->location,
