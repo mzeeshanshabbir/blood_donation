@@ -77,6 +77,56 @@ Route::post('add_donation_record',[donationrecordController::class,'addDonationR
 
 
 
+// Routes For Deleting Data
+Route::get('/delete_user/{id}',[UserController::class,'DeleteUser'])->name('delete.user');
+Route::get('/delete_donor/{id}',[DonorController::class,'DeleteDonor'])->name('delete.donor');
+Route::get('/delete_recipient/{id}',[recipientController::class,'DeleteRecip'])->name('delete.recipient');
+Route::get('/delete_blood_type/{id}',[bloodtypeController::class,'DeleteBlood'])->name('delete.blood');
+Route::get('/delete_donation/{id}',[donationController::class,'DeleteDonation'])->name('delete.donation');
+Route::get('/delete_center/{id}',[donationcenterController::class,'DeleteCenter'])->name('delete.center');
+Route::get('/delete_record/{id}',[donationrecordController::class,'DeleteRecord'])->name('delete.record');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Routes For Update Data
+Route::post('/update_user/{id}',[UserController::class,'AddUser'])->name('update.user');
+Route::post('/update_donor/{id}',[DonorController::class,'UpdateDonor'])->name('update.donor');
+Route::post('/update_recipient/{id}',[recipientController::class,'UpdateRecipient'])->name('update.recipient');
+Route::post('/update_blood_type/{id}',[bloodtypeController::class,'UpdateBloodtype'])->name('update.blood_type');
+Route::post('/update_donation/{id}',[donationController::class,'UpdateDonation'])->name('update.donation');
+Route::post('/update_donation_center/{id}',[donationcenterController::class,'UpdateDonationCenter'])->name('update.donation_center');
+Route::post('/update_donation_record/{id}',[donationrecordController::class,'UpdateDonationRecord'])->name('update.donation_record');
+
+
 //Testing Route.
 Route::get('/data',[TestController::class,'index']);
 
@@ -184,14 +234,4 @@ Route::get('/data',[TestController::class,'index']);
 
 
 
-
-
-//Routes For Update Data
-Route::post('/update_user/{id}',[UserController::class,'UpdateUser'])->name('update.user');
-Route::post('/update_donor/{id}',[DonorController::class,'UpdateDonor'])->name('update.donor');
-Route::post('/update_recipient/{id}',[recipientController::class,'UpdateRecipient'])->name('update.recipient');
-Route::post('/update_blood_type/{id}',[bloodtypeController::class,'UpdateBloodtype'])->name('update.blood_type');
-Route::post('/update_donation/{id}',[donationController::class,'UpdateDonation'])->name('update.donation');
-Route::post('/update_donation_center/{id}',[donationcenterController::class,'UpdateDonationCenter'])->name('update.donation_center');
-Route::post('/update_donation_record/{id}',[donationrecordController::class,'UpdateDonationRecord'])->name('update.donation_record');
 

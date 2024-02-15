@@ -14,6 +14,7 @@
                             <div class="table-responsive p-0">
                                 <form method="POST" action="{{ route('add.donation') }}" class="p-3">
                                     @csrf
+{{--                                    @method('PUT')--}}
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Donor :</label>
                                         <select class="form-control" name="donor_id" >
@@ -26,7 +27,7 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3"> Donation Date :</label>
-                                        <input value="{{old('donation_date')}}" type="date" class="form-control" name="donation_date"  required="true" >
+                                        <input value="{{old('donation_date')}}" type="date" class="form-control" name="donation_date" >
                                     </div>
 
 

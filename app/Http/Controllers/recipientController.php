@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blood_type;
+use App\Http\Requests\RecipientRequest;
+use App\Models\BloodType;
 use App\Models\Recipient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,7 +12,7 @@ class recipientController extends Controller
 {
 
     public function RecipientForm(){
-        $blood_type = Blood_type::all();
+        $blood_type = BloodType::all();
         return view('add_recipient',compact('blood_type'));
     }
 
@@ -21,19 +22,8 @@ class recipientController extends Controller
         return view('recipients_table',['data' => $recipients]);
     }
 
-    public function addRecipient(Request $req){
-        $req->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'date_of_birth' => 'required|date',
-            'gender' => 'required',
-            'contact_number' => 'required|numeric',
-            'email' => 'required|email',
-            'blood_type_id' => 'required',
-            'required_units' => 'required|numeric',
-            'address' => 'required',
-            'hospital_name' => 'required',
-        ]);
+    public function addRecipient(RecipientRequest $req)
+    {
 
         $recipients = Recipient::create([
             'first_name' => $req->fname,
@@ -48,10 +38,20 @@ class recipientController extends Controller
             'hospital_name' => $req->hospital,
         ]);
 
-        if($recipients){
+        if ($recipients) {
             return redirect()->route('show.recipients');
-        }else{
+        } else {
             echo "Recipients Is Not Added";
+        }
+    }
+
+    public function DeleteRecip(string $id){
+        $recipients = Recipient::find($id)->where('id',$id)->delete();
+
+        if ($recipients) {
+            return redirect()->route('show.recipients');
+        } else {
+            echo "Recipients Is Not Deleted";
         }
     }
 }

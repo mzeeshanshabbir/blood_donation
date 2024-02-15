@@ -17,7 +17,8 @@
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Location</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Contact Number</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
-
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Edit</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -36,7 +37,12 @@
                                         <td class="align-middle text-center text-sm">
                                             {{ $center->email}}
                                         </td>
-
+                                        <td class="align-middle text-center text-sm">
+                                            <a class="btn btn-link text-dark px-3 mb-0"  href="/new_donation_center"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <a onclick="return confirm('Are You Sure You Want To Delete This Donation Center.');" class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{ route('delete.center',$center->id) }}"><i class="far fa-trash-alt me-2"></i>Delete</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

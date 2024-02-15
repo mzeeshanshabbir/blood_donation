@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blood_type;
+use App\Models\BloodType;
 use App\Models\Donor;
 use Illuminate\Http\Request;
 

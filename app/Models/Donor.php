@@ -2,17 +2,17 @@
 
 namespace App\Models;
 
+
+use App\Models\BloodType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Donor extends Model
 {
+
+
     use HasFactory;
-
-
-
-
 
     protected $fillable = [
       'first_name',
@@ -26,11 +26,11 @@ class Donor extends Model
       'address',
 
     ];
-    function DonorData(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+
+
+    public function BloodType()
     {
-        return $this->belongsTo(Blood_type::class,'blood_type_id');
+        return $this->belongsTo(BloodType::class);
     }
-
-
 
 }

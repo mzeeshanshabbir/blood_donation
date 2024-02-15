@@ -13,8 +13,8 @@
                                 <thead>
                                 <tr>
                                     {{--<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id</th>--}}
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">First Name</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Last Name</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">First Name</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Last Name</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date Of Birth</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Gender</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Contact Number</th>
@@ -23,6 +23,8 @@
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Required Units</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Address</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Hospital</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Edit</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -58,6 +60,12 @@
                                         </td>
                                         <td class="align-middle text-center text-sm">
                                             {{ $recipients->hospital_name}}
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <a class="btn btn-link text-dark px-3 mb-0"  href="/new_recipient"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <a onclick="return confirm('Are You Sure You Want To Delete This Recipient.');" class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{ route('delete.recipient',$recipients->id) }}"><i class="far fa-trash-alt me-2"></i>Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach

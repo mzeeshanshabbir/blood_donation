@@ -3,37 +3,34 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Blood_type;
+use App\Http\Requests\DonorRequest;
+use App\Models\BloodType;
 use App\Models\Donor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class DonorController extends Controller
 {
+
+
     public function showDonors(){
-     $donors = Donor::all();
+        $donors = Donor::with('BloodType')->get();
+//        echo $donors->blood_group;
+//dd([$donors]);
      return view('donors_table',['data' => $donors]);
     }
 
+
+
     public function DonorsForm(){
-        $blood_type = Blood_type::all();
+        $blood_type = BloodType::all();
         return view('add_donor',compact('blood_type'));
     }
 
 
+    public function addDonor(DonorRequest $req){
 
-    public function addDonor(Request $req){
-        $req->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'date_of_birth' => 'required|date',
-            'gender' => 'required',
-            'contact_number' => 'required',
-            'email' => 'required|email',
-            'blood_type_id' => 'required',
-            'last_donation_date' => 'required|date',
-            'address' => 'required',
-        ]);
+
         $donors = Donor::create([
             'first_name' => $req->fname,
             'last_name' => $req->lname,
@@ -45,11 +42,24 @@ class DonorController extends Controller
             'last_donation_date' => $req->donation_date,
             'address' => $req->address,
         ]);
+
         if($donors){
             return redirect()->route('show.donors');
         }else{
             echo "Donor Is Not Added";
         }
+
+    }
+
+    public function DeleteDonor( string $id){
+        $donors = Donor::find($id)->where('id',$id)->delete();
+
+        if($donors){
+            return redirect()->route('show.donors');
+        }else{
+            echo "Donor Is Not Deleted";
+        }
+
     }
 
 

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\blood_type;
+use App\Http\Requests\BloodTypeRequest;
+use App\Models\BloodType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,12 +15,12 @@ class bloodtypeController extends Controller
     }
 
     public function showBloodtype(){
-        $blood = Blood_type::all();
+        $blood = BloodType::all();
         return view ('blood_types_table',['data' => $blood]);
     }
 
-    public function addBloodType(Request $req){
-        $blood_types  = Blood_type::create([
+    public function addBloodType(BloodTypeRequest $req){
+        $blood_types  = BloodType::create([
             'blood_group' => $req->blood_group,
         ]);
         if($blood_types){
@@ -28,4 +29,16 @@ class bloodtypeController extends Controller
             echo "Blood Type Is Not Added";
         }
     }
+
+    public function DeleteBlood(string $id){
+        $blood_type = BloodType::find($id)->where('id',$id)->delete();
+
+
+    if($blood_type){
+    return redirect()->route('show.bloodtype');
+    } else{
+            echo "Blood Type Is Not Deleted.";
+        }
+    }
+
 }

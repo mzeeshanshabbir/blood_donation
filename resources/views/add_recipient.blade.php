@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Gender:</label>
-                                        <input value="{{old('gender')}}" type="text" class="form-control @error('gender') is in-valid @enderror" name="gender"  >
+                                        <input value="{{old('gender')}}" type="text" class="form-control border-l-4 @error('gender') is in-valid @enderror" name="gender"  >
                                         <div class="input-group input-group-outline mb-3">
                                             <span class="tex-danger">
                                                 @error('gender')

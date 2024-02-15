@@ -13,18 +13,12 @@
 
                     <div class="card-body px-0 pb-2">
                         <div class="table-responsive p-0">
-{{--                            @if($errors->any())--}}
-{{--                                <ul class="alert alert-danger">--}}
-{{--                                    @foreach($errors->all() as $error)--}}
-{{--                                    <li>{{$error}}</li>--}}
-{{--                                    @endforeach--}}
-{{--                                </ul>--}}
-{{--                            @endif--}}
 
                             <form method="POST" action="{{route('add.user')}}" class="p-3">
                                 @csrf
                                 <br>
                                 <div class="input-group input-group-outline mb-3">
+{{--                                    <input type="hidden" value="">--}}
                                     <label class="input-group input-group-outline mb-3">Name :</label>
                                     <input value="{{ old('name') }}" type="text" class="form-control border-l-4 @error('name') is-invalid @enderror" name="name"  >
                                     <div class="input-group input-group-outline mb-3">

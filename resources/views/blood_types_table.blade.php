@@ -15,6 +15,8 @@
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Blood Group</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Created At</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Edit</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Delete</th>
 
                                 </tr>
                                 </thead>
@@ -30,6 +32,12 @@
                                         </td>
                                         <td class="align-middle">
                                             {{ $blood->created_at}}
+                                        </td>
+                                        <td class="align-middle">
+                                            <a class="btn btn-link text-dark px-3 mb-0"  href="/new_blood_type"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                        </td>
+                                        <td class="align-middle">
+                                            <a onclick="return confirm('Are You Sure You Want To Delete This Blood Type.');" class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{ route('delete.blood',$blood->id) }}"><i class="far fa-trash-alt me-2"></i>Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach

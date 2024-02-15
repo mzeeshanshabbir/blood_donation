@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\DonationRecordRequest;
 use App\Models\DonationRecord;
 use App\Models\Donation;
 use App\Models\Recipient;
@@ -22,14 +23,9 @@ class donationrecordController extends Controller
         return view('donation_records_table',['data' => $records]);
     }
 
-    public function addDonationRecord(Request $req){
-        $req->validate([
-            'donation_id' => 'required',
-            'recipient_id' => 'required',
-            'quantity_transfused' => 'required|numeric',
-            'transfusion_date' => 'required',
-            'transfusion_status' => 'required',
-        ]);
+    public function addDonationRecord(DonationRecordRequest $req){
+
+
         $records =  DonationRecord::create([
             'donation_id' => $req->donation_id,
             'recipient_id' => $req->recipient_id,
@@ -41,6 +37,16 @@ class donationrecordController extends Controller
             return redirect()->route('show.donationrecord');
         }else{
             echo "Record Is Not Added";
+        }
+    }
+
+    public function DeleteRecord( string $id){
+        $records = DonationRecord::find($id)->where('id',$id)->delete();
+
+        if($records){
+            return redirect()->route('show.donationrecord');
+        }else{
+            echo "Donation Record Is Not Deleted";
         }
     }
 }

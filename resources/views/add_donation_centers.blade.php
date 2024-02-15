@@ -28,7 +28,7 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3"> Location :</label>
-                                        <input value="{{old('donation_date')}}" type="text" class="form-control @error('location') is-invalid @enderror" name="location" >
+                                        <input value="{{old('location')}}" type="text" class="form-control @error('location') is-invalid @enderror" name="location" >
                                         <div class="input-group input-group-outline mb-3">
                                             <span class="text-danger">
                                                 @error('location')
@@ -41,22 +41,26 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Contact Number :</label>
-                                        <input value="{{old('blood_type')}}" type="text" class="form-control @error('contact') is-invalid @enderror" name="contact"  >
-                                        <div class="input-group input-group-outline mb-3">
+                                        <input value="{{old('contact')}}" type="text" class="form-control @error('contact') is-invalid @enderror" name="contact"  >
+                                         <div class="input-group input-group-outline mb-3">
+                                            <span class="text-danger">
                                             @error('contact')
                                             {{ $message }}
                                             @enderror
+                                        </span>
+                                         </div>
                                         </div>
 
-                                    </div>
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3 ">Email :</label>
-                                        <input value="{{old('quantity')}}" type="email"  class="form-control border-l-4 @error('email') is-invalid @enderror" name="email" >
+                                        <input value="{{old('email')}}" type="email"  class="form-control border-l-4 @error('email') is-invalid @enderror" name="email" >
                                         <div class="input-group input-group-outline mb-3">
+                                            <span class="text-danger">
                                             @error('email')
                                             {{ $message }}
                                             @enderror
+                                            </span>
                                         </div>
                                     </div>
 

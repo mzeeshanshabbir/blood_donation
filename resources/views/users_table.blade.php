@@ -12,21 +12,17 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                             <tr>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Created At</th>
-{{--                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Edit</th>--}}
-{{--                                <th class="text-secondary opacity-7"></th>--}}
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Edit</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Delete</th>
+                                <th class="text-secondary opacity-7"></th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($data as $id => $users)
                             <tr>
-                                <td class="align-middle">
-                                    {{ $users->id }}
-                                </td>
-
                                 <td  class="align-middle">
                                     {{ $users->name }}
                                 </td>
@@ -37,11 +33,12 @@
                                     {{ $users->created_at }}
                                 </td>
 
-{{--                                <td  class="align-middle text-center text-sm">--}}
-{{--                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">--}}
-{{--                                        Edit--}}
-{{--                                    </a>--}}
-{{--                                </td>--}}
+                                <td class="align-middle text-center text-sm">
+                                    <a class="btn btn-link text-dark px-3 mb-0"  href=" /new_user"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                <a onclick="return confirm('Are you sure you want to delete this User?');" class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{ route('delete.user',$users->id) }}"><i class="far fa-trash-alt me-2"></i>Delete</a>
+                            </td>
                             </tr>
                             @endforeach
                             </tbody>

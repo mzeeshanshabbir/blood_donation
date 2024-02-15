@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Quantity Transfused :</label>
-                                        <input value="{{old('blood_type')}}" type="number" class="form-control @error('quantity') is-invalid @enderror" name="quantity"  >
+                                        <input value="{{old('quantity')}}" type="number" class="form-control @error('quantity') is-invalid @enderror" name="quantity"  >
                                         <div class="input-group input-group-outline mb-3">
                                             <span class="text-danger">
                                                 @error('quantity')
@@ -46,7 +46,7 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3 ">Transfusion Date:</label>
-                                        <input value="{{old('quantity')}}" type="date"  class="form-control border-l-4 @error('date') is-invalid @enderror" name="date"  >
+                                        <input value="{{old('date')}}" type="date"  class="form-control border-l-4 @error('date') is-invalid @enderror" name="date"  >
                                         <div class="input-group input-group-outline mb-3">
                                             <span class="text-danger">
                                                 @error('date')

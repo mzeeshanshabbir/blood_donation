@@ -18,6 +18,8 @@
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Quantity_Transfused </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Transfusion Date</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Transfusion Status</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Edit</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Delete</th>
 
                                 </tr>
                                 </thead>
@@ -40,7 +42,12 @@
                                         <td class="align-middle text-center text-sm">
                                             {{ $records->transfusion_status}}
                                         </td>
-
+                                        <td class="align-middle text-center text-sm">
+                                            <a class="btn btn-link text-dark px-3 mb-0"  href="/new_donation_record"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <a onclick="return confirm('Are You Sure You Want To Delete This Donation Record.')" class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{ route('delete.record',$records->id)}}"><i class="far fa-trash-alt me-2"></i>Delete</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

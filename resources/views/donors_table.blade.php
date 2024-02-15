@@ -13,8 +13,7 @@
                                 <thead>
                                 <tr>
 {{--                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id</th>--}}
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">First Name</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Last Name</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date Of Birth</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Gender</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Contact Number</th>
@@ -22,18 +21,17 @@
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Blood Type </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Last Donation Date</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Address</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Edit</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($data as $id => $donors)
                                     <tr>
                                         <td class="align-middle">
-                                            {{ $donors->first_name }}
+                                            {{ $donors->first_name }}  {{ $donors->last_name }}
                                         </td>
 
-                                        <td  class="align-middle">
-                                            {{ $donors->last_name }}
-                                        </td>
                                         <td class="align-middle text-center text-sm">
                                             {{ $donors->date_of_birth}}
                                         </td>
@@ -54,6 +52,12 @@
                                         </td>
                                         <td class="align-middle text-center text-sm">
                                             {{ $donors->address}}
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <a class="btn btn-link text-dark px-3 mb-0"  href="/new_donor "><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <a onclick="return confirm('Are you sure you want to delete this Donor?');" class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{ route('delete.donor',$donors->id) }}"><i class="far fa-trash-alt me-2"></i>Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
