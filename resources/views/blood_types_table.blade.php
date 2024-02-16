@@ -2,7 +2,7 @@
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
-                <button type="button" class="btn btn-outline-primary btn-sm mb-0"><a href="/new_blood_type">Add New Blood Type</a></button>
+                <button type="button" class="btn btn-outline-primary btn-sm mb-0"><a href="/add-blood_type">Add New Blood Type</a></button>
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         <h6>Blood Types table</h6>
@@ -21,8 +21,8 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($data as $id => $blood)
-                                    <tr>
+                                        @foreach($data as $id => $blood)
+                                        <tr>
                                         <td class="align-middle">
                                             {{ $blood->id }}
                                         </td>
@@ -34,7 +34,7 @@
                                             {{ $blood->created_at}}
                                         </td>
                                         <td class="align-middle">
-                                            <a class="btn btn-link text-dark px-3 mb-0"  href="/new_blood_type"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                            <a class="btn btn-link text-dark px-3 mb-0"  href="{{ route('edit.blood',$blood->id) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                                         </td>
                                         <td class="align-middle">
                                             <a onclick="return confirm('Are You Sure You Want To Delete This Blood Type.');" class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{ route('delete.blood',$blood->id) }}"><i class="far fa-trash-alt me-2"></i>Delete</a>

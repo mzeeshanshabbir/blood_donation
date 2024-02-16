@@ -49,4 +49,9 @@ class donationrecordController extends Controller
             echo "Donation Record Is Not Deleted";
         }
     }
+
+    public function RecordEditForm(string $id){
+        $records = DonationRecord::find($id);
+        return view('eidt_donation_record',compact('records'));
+    }
 }

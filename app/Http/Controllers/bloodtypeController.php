@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BloodTypeRequest;
 use App\Models\BloodType;
+use Faker\Core\Blood;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -39,6 +40,11 @@ class bloodtypeController extends Controller
     } else{
             echo "Blood Type Is Not Deleted.";
         }
+    }
+
+    public function BloodEditForm(string $id){
+        $blood_type = BloodType::find($id);
+        return view('edit_blood_type', compact('blood_type'));
     }
 
 }

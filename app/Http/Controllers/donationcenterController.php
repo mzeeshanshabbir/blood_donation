@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\DonationCenterRequest;
+use App\Models\Donation;
 use App\Models\donationcenter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -30,7 +31,7 @@ class donationcenterController extends Controller
         if($center){
             return redirect()->route('show.donationcenter');
         }else{
-            echo "Center Is Not Added";
+            echo "Center Is Not Added.";
         }
     }
 
@@ -43,4 +44,12 @@ class donationcenterController extends Controller
             echo "Donation Center Is Not Deleted";
         }
     }
+
+    public function CenterEditForm(string $id){
+        $center = DonationCenter::find($id);
+        return view('edit_donation_center',compact('center'));
+
+    }
+
+
 }

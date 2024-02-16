@@ -28,7 +28,7 @@ class DonorController extends Controller
     }
 
 
-    public function addDonor(DonorRequest $req){
+    public function addDonor(DonorRequest $req, string $id){
 
 
         $donors = Donor::create([
@@ -59,7 +59,11 @@ class DonorController extends Controller
         }else{
             echo "Donor Is Not Deleted";
         }
+    }
 
+    public function DonorEditForm(string $id){
+        $donor = Donor::find($id);
+        return view('edit_donor',compact('donor'));
     }
 
 

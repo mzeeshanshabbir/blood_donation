@@ -48,4 +48,9 @@ class donationController extends Controller
             echo "Donation Is Not Deleted";
         }
     }
+
+    public function DonationEditForm(string $id){
+        $donations = Donation::find($id);
+        return view('edit_donation',compact('donations'));
+    }
 }

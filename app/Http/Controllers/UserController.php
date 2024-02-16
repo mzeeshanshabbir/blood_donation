@@ -19,7 +19,7 @@ class UserController extends Controller
      return view('users_table',['data' => $users]);
     }
 
- public function AddUser(UserRequest $req)
+ public function AddUser(UserRequest $req, string $id)
     {
 
      $users = User::updateOrCreate([
@@ -28,11 +28,7 @@ class UserController extends Controller
          'email' => $req->email,
          'password' => $req->password,
      ]);
-        if ($users) {
-            return redirect()->route('show.user');
-        } else {
-            echo "User Is Not Added.";
-        }
+
     }
 
     public function DeleteUser(string $id){
@@ -46,11 +42,22 @@ class UserController extends Controller
          }
 
     }
+
+    public function UserEditForm(string $id){
+        $user = User::find($id);
+        return view('edit_user',compact('user'));
+    }
     }
 
 
 
 
+//
+//if ($users) {
+//    return redirect()->route('show.user');
+//} else {
+//    echo "User Is Not Added.";
+//}
 
 
 

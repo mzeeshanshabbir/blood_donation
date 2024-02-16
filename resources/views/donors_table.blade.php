@@ -2,7 +2,7 @@
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
-                <button type="button" class="btn btn-outline-primary btn-sm mb-0"><a href="/new_donor"> Add New Donor</a></button>
+                <button type="button" class="btn btn-outline-primary btn-sm mb-0"><a href="/add-donor"> Add New Donor</a></button>
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         <h6>Donors table</h6>
@@ -54,7 +54,7 @@
                                             {{ $donors->address}}
                                         </td>
                                         <td class="align-middle text-center text-sm">
-                                            <a class="btn btn-link text-dark px-3 mb-0"  href="/new_donor "><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                            <a class="btn btn-link text-dark px-3 mb-0"  href="{{ route('edit.donor',$donors->id) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                                         </td>
                                         <td class="align-middle text-center text-sm">
                                             <a onclick="return confirm('Are you sure you want to delete this Donor?');" class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{ route('delete.donor',$donors->id) }}"><i class="far fa-trash-alt me-2"></i>Delete</a>

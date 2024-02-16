@@ -54,4 +54,9 @@ class recipientController extends Controller
             echo "Recipients Is Not Deleted";
         }
     }
+
+    public function RecipEditForm(string $id){
+        $recipients = Recipient::find($id);
+        return view('edit_recipient',compact('recipients'));
+    }
 }
