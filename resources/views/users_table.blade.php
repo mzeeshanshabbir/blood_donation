@@ -34,7 +34,7 @@
                                 </td>
 
                                 <td class="align-middle text-center text-sm">
-                                    <a class="btn btn-link text-dark px-3 mb-0"  href="{{ route('edit.user',$users->id) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                    <a class="btn btn-link text-dark px-3 mb-0"  href="{{ route('user.edit.form',$users->id) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                                 </td>
                                 <td class="align-middle text-center text-sm">
                                 <a onclick="return confirm('Are you sure you want to delete this User?');" class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{ route('delete.user',$users->id) }}"><i class="far fa-trash-alt me-2"></i>Delete</a>

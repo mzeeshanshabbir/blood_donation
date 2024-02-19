@@ -19,7 +19,7 @@
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Blood Group :</label>
                                         <select class="form-control" name="blood_group" >
-                                            <option value="{{ $blood_type->blood_group }}">A Positive </option>
+                                            <option value="{{$blood_type->id}}">{{ $blood_type->blood_group }}</option>
                                             <option value="A Negative">A Negative </option>
                                             <option value="B Positive">B Positive</option>
                                             <option value="B Negative">B Negative</option>

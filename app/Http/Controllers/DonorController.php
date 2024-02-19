@@ -12,22 +12,7 @@ use Illuminate\Support\Facades\DB;
 class DonorController extends Controller
 {
 
-
-    public function showDonors(){
-        $donors = Donor::with('BloodType')->get();
-//        echo $donors->blood_group;
-//dd([$donors]);
-     return view('donors_table',['data' => $donors]);
-    }
-
-
-
-    public function DonorsForm(){
-        $blood_type = BloodType::all();
-        return view('add_donor',compact('blood_type'));
-    }
-
-
+    // Method For Add Donor.
     public function addDonor(DonorRequest $req, string $id){
 
 
@@ -51,6 +36,19 @@ class DonorController extends Controller
 
     }
 
+
+
+    // Method For Edit Donor.
+
+
+
+
+
+
+
+
+
+    // Method For Delete Donor.
     public function DeleteDonor( string $id){
         $donors = Donor::find($id)->where('id',$id)->delete();
 
@@ -59,6 +57,24 @@ class DonorController extends Controller
         }else{
             echo "Donor Is Not Deleted";
         }
+    }
+
+
+
+    // Method For Show Table Data.
+    public function showDonors(){
+        $donors = Donor::with('BloodType')->get();
+     // echo $donors->blood_group;
+     //dd([$donors]);
+        return view('donors_table',['data' => $donors]);
+    }
+
+
+
+    // Methods For Show Edit And Add Forms.
+    public function DonorsForm(){
+        $blood_type = BloodType::all();
+        return view('add_donor',compact('blood_type'));
     }
 
     public function DonorEditForm(string $id){

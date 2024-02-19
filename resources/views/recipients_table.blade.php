@@ -62,7 +62,7 @@
                                             {{ $recipients->hospital_name}}
                                         </td>
                                         <td class="align-middle text-center text-sm">
-                                            <a class="btn btn-link text-dark px-3 mb-0"  href="{{ route('edit.recipient',$recipients->id) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                            <a class="btn btn-link text-dark px-3 mb-0"  href="{{ route('recipient.edit.form',$recipients->id) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                                         </td>
                                         <td class="align-middle text-center text-sm">
                                             <a onclick="return confirm('Are You Sure You Want To Delete This Recipient.');" class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{ route('delete.recipient',$recipients->id) }}"><i class="far fa-trash-alt me-2"></i>Delete</a>

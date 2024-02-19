@@ -11,17 +11,7 @@ use Illuminate\Support\Facades\DB;
 class recipientController extends Controller
 {
 
-    public function RecipientForm(){
-        $blood_type = BloodType::all();
-        return view('add_recipient',compact('blood_type'));
-    }
-
-
-    public function showRecipients(){
-        $recipients = Recipient::all();
-        return view('recipients_table',['data' => $recipients]);
-    }
-
+    // Method For Add Recipient.
     public function addRecipient(RecipientRequest $req)
     {
 
@@ -45,6 +35,18 @@ class recipientController extends Controller
         }
     }
 
+
+
+    // Method For Edit Recipient.
+
+
+
+
+
+
+
+
+    // Method For Delete Recipient.
     public function DeleteRecip(string $id){
         $recipients = Recipient::find($id)->where('id',$id)->delete();
 
@@ -53,6 +55,22 @@ class recipientController extends Controller
         } else {
             echo "Recipients Is Not Deleted";
         }
+    }
+
+
+
+    // Method For Show Table Data
+    public function showRecipients(){
+        $recipients = Recipient::all();
+        return view('recipients_table',['data' => $recipients]);
+    }
+
+
+
+    // Methods For Show Edit And Add Forms.
+    public function RecipientForm(){
+        $blood_type = BloodType::all();
+        return view('add_recipient',compact('blood_type'));
     }
 
     public function RecipEditForm(string $id){

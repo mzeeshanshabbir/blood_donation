@@ -12,16 +12,7 @@ use Illuminate\Support\Facades\DB;
 class donationController extends Controller
 {
 
-    public function DonationForm(){
-        $donor = Donor::all();
-        $blood_type = BloodType::all();
-        return view('add_donation',compact('donor','blood_type'));
-    }
-    public function showDonation(){
-        $donations = Donation::all();
-        return view('donations_table',['data' => $donations]);
-    }
-
+    // Method For Add Donation.
     public function addDonation(DonationRequest $req){
 
         $donations = Donation::create([
@@ -39,6 +30,16 @@ class donationController extends Controller
         }
     }
 
+
+
+    // Method For Edit Donation.
+
+
+
+
+
+
+    // Method For Delete Donation.
     public function DeleteDonation(string $id){
         $donations = Donation::find($id)->where('id',$id)->delete();
 
@@ -47,6 +48,23 @@ class donationController extends Controller
         }else{
             echo "Donation Is Not Deleted";
         }
+    }
+
+
+
+   // Method For Show Table Data.
+    public function showDonation(){
+        $donations = Donation::all();
+        return view('donations_table',['data' => $donations]);
+    }
+
+
+
+    // Methods For Show Add And Edit Form.
+    public function DonationForm(){
+        $donor = Donor::all();
+        $blood_type = BloodType::all();
+        return view('add_donation',compact('donor','blood_type'));
     }
 
     public function DonationEditForm(string $id){

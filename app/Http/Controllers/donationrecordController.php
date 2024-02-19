@@ -13,16 +13,7 @@ use Illuminate\Support\Facades\DB;
 class donationrecordController extends Controller
 {
 
-    public function RecordForm(){
-        $don_date = Donation::all();
-        $recip_date = Recipient::all();
-        return view('add_donation_record',compact('don_date','recip_date'));
-    }
-    public function showdonationRecord(){
-          $records = DonationRecord::all();
-        return view('donation_records_table',['data' => $records]);
-    }
-
+    // Method For Add Donation Record.
     public function addDonationRecord(DonationRecordRequest $req){
 
 
@@ -40,6 +31,13 @@ class donationrecordController extends Controller
         }
     }
 
+
+
+    // Method For Edit Donation Record.
+
+
+
+    // Method For Delete Donation Record.
     public function DeleteRecord( string $id){
         $records = DonationRecord::find($id)->where('id',$id)->delete();
 
@@ -48,6 +46,23 @@ class donationrecordController extends Controller
         }else{
             echo "Donation Record Is Not Deleted";
         }
+    }
+
+
+
+    // Method For Show Table Data.
+    public function showdonationRecord(){
+        $records = DonationRecord::all();
+        return view('donation_records_table',['data' => $records]);
+    }
+
+
+
+    // Method For Show Add And Edit Forms.
+    public function RecordForm(){
+        $don_date = Donation::all();
+        $recip_date = Recipient::all();
+        return view('add_donation_record',compact('don_date','recip_date'));
     }
 
     public function RecordEditForm(string $id){

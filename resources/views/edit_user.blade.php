@@ -14,7 +14,7 @@
                         <div class="card-body px-0 pb-2">
                             <div class="table-responsive p-0">
 
-                                <form method="POST" action="{{route('add.user')}}" class="p-3">
+                                <form method="POST" action="{{ route('edit.user',$user->id) }}" class="p-3">
                                     @csrf
                                     <br>
                                     <div class="input-group input-group-outline mb-3">

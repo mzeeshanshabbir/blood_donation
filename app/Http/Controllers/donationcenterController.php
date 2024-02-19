@@ -11,14 +11,7 @@ use Illuminate\Support\Facades\DB;
 class donationcenterController extends Controller
 {
 
-    public function CenterForm(){
-        return view('add_donation_centers');
-    }
-    public function showDonationcenter(){
-        $center = DonationCenter::all();
-        return view('donation_centers_table',['data' => $center]);
-    }
-
+    // Method For Add Donation Center.
     public function addDonationCenter(DonationCenterRequest $req){
 
         $center = DonationCenter::create([
@@ -35,6 +28,14 @@ class donationcenterController extends Controller
         }
     }
 
+
+
+    // Method For Edit Donation Center.
+
+
+
+
+    // Method For Delete Donation Center.
     public function DeleteCenter(string $id){
         $center = DonationCenter::find($id)->where('id',$id)->delete();
 
@@ -45,6 +46,20 @@ class donationcenterController extends Controller
         }
     }
 
+
+
+    // Method For Show Table Data.
+    public function showDonationcenter(){
+        $center = DonationCenter::all();
+        return view('donation_centers_table',['data' => $center]);
+    }
+
+
+
+    // Methods For Show Edit And Add Form.
+    public function CenterForm(){
+        return view('add_donation_centers');
+    }
     public function CenterEditForm(string $id){
         $center = DonationCenter::find($id);
         return view('edit_donation_center',compact('center'));
