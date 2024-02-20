@@ -31,7 +31,6 @@ class DonorRequest extends FormRequest
             'blood_type' => 'required',
             'donation_date' => 'required',
             'address' => 'required',
-
         ];
     }
 }

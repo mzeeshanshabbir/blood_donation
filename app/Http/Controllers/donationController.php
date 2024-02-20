@@ -32,13 +32,6 @@ class donationController extends Controller
 
 
 
-    // Method For Edit Donation.
-
-
-
-
-
-
     // Method For Delete Donation.
     public function DeleteDonation(string $id){
         $donations = Donation::find($id)->where('id',$id)->delete();

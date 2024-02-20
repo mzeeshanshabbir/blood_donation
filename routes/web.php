@@ -43,7 +43,7 @@ Route::get('/register',[linkController::class,'showregister']);
 
 
 
-//Routes For Inserting Data.
+// Routes For Inserting Data.
 Route::post('/add_user',[UserController::class,'AddUser'])->name('add.user');
 Route::post('/add_donor',[DonorController::class,'addDonor'])->name('add.donor');
 Route::post('/add_recipient',[recipientController::class,'addRecipient'])->name('add.recipient');
@@ -65,7 +65,7 @@ Route::get('/donation_record',[donationrecordController::class,'showdonationReco
 
 
 
-//Routes For Edit Data
+// Routes For Edit Data
 Route::post('/update-user/{id}',[UserController::class,'EditUser'])->name('edit.user');
 Route::post('/update-donor/{id}',[DonorController::class,'addDonor'])->name('edit.donor');
 Route::post('/update-recipient/{id}',[recipientController::class,'addRecipient'])->name('edit.recipient');
@@ -87,7 +87,7 @@ Route::get('/delete_record/{id}',[donationrecordController::class,'DeleteRecord'
 
 
 
-//Routes For Show Add Forms.
+// Routes For Show Add Forms.
 Route::get('/add-user',[UserController::class,'UserForm'])->name('new.user');
 Route::get('/add-donor',[DonorController::class,'DonorsForm']);
 Route::get('/add-recipient',[recipientController::class,'RecipientForm']);
@@ -98,7 +98,7 @@ Route::get('/add-donation_record',[donationrecordController::class,'RecordForm']
 
 
 
-//Routes For Show Edit Form.
+// Routes For Show Edit Form.
 Route::get('/edit-user/{id}',[UserController::class,'UserEditForm'])->name('user.edit.form');
 Route::get('/edit-donor/{id}',[DonorController::class,'DonorEditForm'])->name('donor.edit.form');
 Route::get('edit-recipient/{id}',[recipientController::class,'RecipEditForm'])->name('recipient.edit.form');

@@ -14,11 +14,11 @@
                         <div class="card-body px-0 pb-2">
                             <div class="table-responsive p-0">
 
-                                <form method="POST" action="{{ route('edit.user',$user->id) }}" class="p-3">
+                                <form method="POST" action="{{ route('add.user') }}" class="p-3">
                                     @csrf
                                     <br>
                                     <div class="input-group input-group-outline mb-3">
-                                        {{--<input type="hidden" value="">--}}
+                                        <input type="hidden" name="id" value="{{ $user->id }}">
                                         <label class="input-group input-group-outline mb-3">Name :</label>
                                         <input value="{{ $user->name}}" type="text" class="form-control border-l-4 @error('name') is-invalid @enderror" name="name"  >
                                         <div class="input-group input-group-outline mb-3">

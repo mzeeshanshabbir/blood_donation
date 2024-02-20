@@ -15,6 +15,7 @@
                                 <form method="POST" action="{{ route('add.donor') }}" class="p-3">
                                     @csrf
                                     <div class="input-group input-group-outline mb-3">
+                                        <input type="text" name="id" value="{{$donor->id}}">
                                         <label class="input-group input-group-outline mb-3"> Name :</label>
                                         <input value="{{ $donor->first_name }}" type="text" class="form-control border-l-4 @error('fname') is-invalid @enderror" name="fname" placeholder="First Name">
                                         <span class="text-danger">
@@ -76,16 +77,16 @@
                                     </div>
 
 
-                                    <div class="input-group input-group-outline mb-3">
-                                        <label class="input-group input-group-outline mb-3">Blood Type :</label>
+{{--                                    <div class="input-group input-group-outline mb-3">--}}
+{{--                                        <label class="input-group input-group-outline mb-3">Blood Type :</label>--}}
 
-                                        <select class="form-control" name="blood_type" >
+{{--                                        <select class="form-control" name="blood_type" >--}}
 {{--                                            @foreach( $blood_type as  $data)--}}
 {{--                                                <option value="{{ $data->id}}">{{ $data->blood_group }}</option>--}}
 {{--                                            @endforeach--}}
-                                        </select>
+{{--                                        </select>--}}
 
-                                    </div>
+{{--                                    </div>--}}
 
 
                                     <div class="input-group input-group-outline mb-3">

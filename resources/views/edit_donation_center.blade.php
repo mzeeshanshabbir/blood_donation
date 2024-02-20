@@ -15,6 +15,7 @@
                                 <form method="POST" action="{{ route('add.donation_center') }}" class="p-3">
                                     @csrf
                                     <div class="input-group input-group-outline mb-3">
+                                        <input type="hidden" name="id" value="{{ $center->id }}">
                                         <label class="input-group input-group-outline mb-3"> Center Name :</label>
                                         <input value="{{ $center->center_name }}" type="text" class="form-control border-l-4 @error('center_name') is-invalid @enderror" name="center_name"  >
                                         <div class="input-group input-group-outline mb-3">

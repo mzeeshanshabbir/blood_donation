@@ -13,20 +13,11 @@ class DonorController extends Controller
 {
 
     // Method For Add Donor.
-    public function addDonor(DonorRequest $req, string $id){
+    public function addDonor(DonorRequest $req){
 
+        $validate = $req->validated();
 
-        $donors = Donor::create([
-            'first_name' => $req->fname,
-            'last_name' => $req->lname,
-            'date_of_birth' => $req->birth_date,
-            'gender' => $req->gender,
-            'contact_number' => $req->contact,
-            'email' => $req->email,
-            'blood_type_id' => $req->blood_type,
-            'last_donation_date' => $req->donation_date,
-            'address' => $req->address,
-        ]);
+        $donors = Donor::updateOrCreate(['id'=>$req->id],$validate);
 
         if($donors){
             return redirect()->route('show.donors');
@@ -35,16 +26,6 @@ class DonorController extends Controller
         }
 
     }
-
-
-
-    // Method For Edit Donor.
-
-
-
-
-
-
 
 
 

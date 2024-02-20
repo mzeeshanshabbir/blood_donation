@@ -33,10 +33,6 @@ class donationrecordController extends Controller
 
 
 
-    // Method For Edit Donation Record.
-
-
-
     // Method For Delete Donation Record.
     public function DeleteRecord( string $id){
         $records = DonationRecord::find($id)->where('id',$id)->delete();

@@ -37,15 +37,6 @@ class recipientController extends Controller
 
 
 
-    // Method For Edit Recipient.
-
-
-
-
-
-
-
-
     // Method For Delete Recipient.
     public function DeleteRecip(string $id){
         $recipients = Recipient::find($id)->where('id',$id)->delete();

@@ -14,35 +14,14 @@ class UserController extends Controller
     // Method For Add User.
     public function AddUser(UserRequest $req)
     {
+        $validate = $req->validated();
 
-        $users = User::updateOrCreate([
-            'name' => $req->name,
-            'email' => $req->email,
-            'password' => $req->password,
-        ]);
+        $user = User::updateOrCreate(['id'=>$req->id],$validate);
 
-        if ($users){
+        if ($user){
             return redirect()->route('show.user');
         } else{
             echo "User Is Not Added.";
-        }
-    }
-
-
-
-    // Method For Update User.
-    public function EditUser(Request $req ,$id){
-        $users = DB::table('users')->where('id',$id)
-        ->update([
-            'name' => $req->name,
-            'email' => $req->email,
-            'password' => $req->password,
-        ]);
-
-        if ($users){
-            return redirect()->route('show.user');
-        } else{
-            echo "User Is Not Updated.";
         }
     }
 
@@ -75,7 +54,7 @@ class UserController extends Controller
         return view('add_user');
     }
 
-    public function UserEditForm(string $id){
+    public function UserEditForm($id){
         $user = User::find($id);
         return view('edit_user',compact('user'));
     }

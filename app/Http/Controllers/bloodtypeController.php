@@ -25,13 +25,6 @@ class bloodtypeController extends Controller
 
 
 
-    // Method For Edit Blood Type.
-
-
-
-
-
-
     // Method For Delete Blood Type.
     public function DeleteBlood(string $id){
         $blood_type = BloodType::find($id)->where('id',$id)->delete();

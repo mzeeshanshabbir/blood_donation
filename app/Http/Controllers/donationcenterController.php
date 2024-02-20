@@ -30,11 +30,6 @@ class donationcenterController extends Controller
 
 
 
-    // Method For Edit Donation Center.
-
-
-
-
     // Method For Delete Donation Center.
     public function DeleteCenter(string $id){
         $center = DonationCenter::find($id)->where('id',$id)->delete();

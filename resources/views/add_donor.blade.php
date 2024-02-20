@@ -102,7 +102,7 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Address :</label>
-                                        <textarea value="{{old('address')}}" class="form-control @error('address') is-invalid @enderror" name="address"  ></textarea>
+                                        <textarea  class="form-control @error('address') is-invalid @enderror" name="address"  >{{old('address')}}</textarea>
                                         <div class="input-group input-group-outline mb-3">
                                     <span class="text-danger">
                                         @error('address')
@@ -122,4 +122,6 @@
                 </div>
                 <div class="col-1"></div>
             </div>
+        </div>
+    </main>
 </x-app-layout>
