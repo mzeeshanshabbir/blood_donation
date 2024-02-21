@@ -22,11 +22,11 @@ class DonationRecordRequest extends FormRequest
     public function rules(): array
     {
         return [
-//            'donation_id' => 'required',
-//            'recipient_id' => 'required',
-//            'quantity' => 'required|numeric',
-//            'date' => 'required',
-//            'status' => 'required',
+            'donation_id' => 'required',
+            'recipient_id' => 'required',
+            'quantity_transfused' => 'required|numeric',
+            'transfusion_date' => 'required',
+            'transfusion_status' => 'required',
 
         ];
     }

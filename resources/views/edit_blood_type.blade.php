@@ -12,11 +12,12 @@
                         </div>
                         <div class="card-body px-0 pb-2">
                             <div class="table-responsive p-0">
-                                <form method="POST" action="" class="p-3">
+                                <form method="POST" action="{{ route('add.blood_type') }}" class="p-3">
                                     @csrf
                                     <br>
 
                                     <div class="input-group input-group-outline mb-3">
+                                        <input type="hidden" name="id" value="{{$blood_type->id}}">
                                         <label class="input-group input-group-outline mb-3">Blood Group :</label>
                                         <select class="form-control" name="blood_group" >
                                             <option value="{{$blood_type->id}}">{{ $blood_type->blood_group }}</option>

@@ -20,9 +20,9 @@ class donationrecordController extends Controller
         $records =  DonationRecord::create([
             'donation_id' => $req->donation_id,
             'recipient_id' => $req->recipient_id,
-            'quantity_transfused' => $req->quantity,
-            'transfusion_date' => $req->date,
-            'transfusion_status' => $req->status,
+            'quantity_transfused' => $req->quantity_transfused,
+            'transfusion_date' => $req->transfusion_date,
+            'transfusion_status' => $req->transfusion_status,
         ]);
         if($records){
             return redirect()->route('show.donationrecord');

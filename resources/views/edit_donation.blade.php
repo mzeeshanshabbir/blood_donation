@@ -18,9 +18,9 @@
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Donor :</label>
                                         <select class="form-control" name="donor_id" >
-{{--                                            @foreach($donor as $data)--}}
-{{--                                                <option value="{{$data->id}}">{{ $data->first_name }}   {{$data->last_name}} </option>--}}
-{{--                                            @endforeach--}}
+                                            @foreach($donor as $data)
+                                                <option value="{{$data->id}}">{{ $data->first_name }}   {{$data->last_name}} </option>
+                                            @endforeach
                                         </select>
                                     </div>
 
@@ -33,20 +33,20 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Blood Type :</label>
-                                        <select class="form-control" name="blood_type" >
-{{--                                            @foreach($blood_type as $dataa )--}}
-{{--                                                <option value="{{$dataa->id}}">{{$dataa->blood_group}} </option>--}}
-{{--                                            @endforeach--}}
+                                        <select class="form-control" name="blood_type_id" >
+                                            @foreach($blood_type as $dataa )
+                                                <option value="{{$dataa->id}}">{{$dataa->blood_group}} </option>
+                                            @endforeach
 
                                         </select>
                                     </div>
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3 ">Quanitity ML :</label>
-                                        <input value="{{$donations->quantity_in_ml}}" type="number"  class="form-control border-l-4 @error('quantity') is-invalid @enderror" name="quantity"  >
+                                        <input value="{{$donations->quantity_in_ml}}" type="number"  class="form-control border-l-4 @error('quantity_in_ml') is-invalid @enderror" name="quantity_in_ml"  >
                                         <div class="input-group input-group-outline mb-3">
                                             <span class="text-danger">
-                                                @error('quantity')
+                                                @error('quantity_in_ml')
                                                 {{ $message }}
                                                 @enderror
                                             </span>

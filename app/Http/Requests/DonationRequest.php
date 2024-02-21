@@ -25,8 +25,8 @@ class DonationRequest extends FormRequest
 
             'donor_id' => 'required' ,
             'donation_date' => 'required|date',
-            'blood_type' => 'required',
-            'quantity' => 'required|numeric',
+            'blood_type_id' => 'required',
+            'quantity_in_ml' => 'required|numeric',
             'status' => 'required',
 
         ];

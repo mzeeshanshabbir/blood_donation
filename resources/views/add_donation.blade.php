@@ -33,7 +33,7 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Blood Type :</label>
-                                        <select class="form-control" name="blood_type" >
+                                        <select class="form-control" name="blood_type_id" >
                                             @foreach($blood_type as $dataa )
                                                 <option value="{{$dataa->id}}">{{$dataa->blood_group}} </option>
                                             @endforeach
@@ -43,10 +43,10 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3 ">Quanitity ML :</label>
-                                        <input value="{{old('quantity')}}" type="number"  class="form-control border-l-4 @error('quantity') is-invalid @enderror" name="quantity"  >
+                                        <input value="{{old('quantity_in_ml')}}" type="number"  class="form-control border-l-4 @error('quantity') is-invalid @enderror" name="quantity_in_ml"  >
                                         <div class="input-group input-group-outline mb-3">
                                             <span class="text-danger">
-                                                @error('quantity')
+                                                @error('quantity_in_ml')
                                                 {{ $message }}
                                                 @enderror
                                             </span>

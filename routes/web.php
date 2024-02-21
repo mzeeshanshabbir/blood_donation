@@ -42,7 +42,6 @@ Route::get('/register',[linkController::class,'showregister']);
 
 
 
-
 // Routes For Inserting Data.
 Route::post('/add_user',[UserController::class,'AddUser'])->name('add.user');
 Route::post('/add_donor',[DonorController::class,'addDonor'])->name('add.donor');

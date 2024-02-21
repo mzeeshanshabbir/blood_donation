@@ -13,9 +13,9 @@ class bloodtypeController extends Controller
 
     // Method For Add Blood Type.
     public function addBloodType(BloodTypeRequest $req){
-        $blood_types  = BloodType::create([
-            'blood_group' => $req->blood_group,
-        ]);
+
+        $validate = $req->validated();
+        $blood_types = BloodType::updateOrCreate(['id'=>$req->id],$validate);
         if($blood_types){
             return redirect()->route('show.bloodtype');
         }else{

@@ -60,7 +60,8 @@ class DonorController extends Controller
 
     public function DonorEditForm(string $id){
         $donor = Donor::find($id);
-        return view('edit_donor',compact('donor'));
+        $blood_type = BloodType::all();
+        return view('edit_donor',compact('donor','blood_type'));
     }
 
 

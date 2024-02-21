@@ -13,15 +13,11 @@ class donationController extends Controller
 {
 
     // Method For Add Donation.
-    public function addDonation(DonationRequest $req){
+    public function addDonation(DonationRequest $req)
+    {
 
-        $donations = Donation::create([
-            'donor_id' => $req->donor_id,
-            'donation_date' => $req->donation_date,
-            'blood_type_id' => $req->blood_type,
-            'quantity_in_ml' => $req->quantity,
-            'status' => $req->status,
-        ]);
+        $validate = $req->validated();
+        $donations =  Donation::updateOrCreate(['id'=>$req->id],$validate);
 
         if($donations){
             return redirect()->route('show.donations');
@@ -33,7 +29,8 @@ class donationController extends Controller
 
 
     // Method For Delete Donation.
-    public function DeleteDonation(string $id){
+    public function DeleteDonation(string $id)
+    {
         $donations = Donation::find($id)->where('id',$id)->delete();
 
         if($donations){
@@ -46,7 +43,8 @@ class donationController extends Controller
 
 
    // Method For Show Table Data.
-    public function showDonation(){
+    public function showDonation()
+    {
         $donations = Donation::all();
         return view('donations_table',['data' => $donations]);
     }
@@ -54,14 +52,18 @@ class donationController extends Controller
 
 
     // Methods For Show Add And Edit Form.
-    public function DonationForm(){
+    public function DonationForm()
+    {
         $donor = Donor::all();
         $blood_type = BloodType::all();
         return view('add_donation',compact('donor','blood_type'));
     }
 
-    public function DonationEditForm(string $id){
+    public function DonationEditForm(string $id)
+    {
         $donations = Donation::find($id);
-        return view('edit_donation',compact('donations'));
+        $donor = Donor::all();
+        $blood_type = BloodType::all();
+        return view('edit_donation',compact('donations','donor','blood_type'));
     }
 }

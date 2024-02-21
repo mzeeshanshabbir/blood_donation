@@ -16,15 +16,15 @@
                                     @csrf
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3"> Name :</label>
-                                        <input value="{{ old('fname') }}" type="text" class="form-control border-l-4 @error('fname') is-invalid @enderror" name="fname" placeholder="First Name">
+                                        <input value="{{ old('first_name') }}" type="text" class="form-control border-l-4 @error('first_name') is-invalid @enderror" name="first_name" placeholder="First Name">
                                         <span class="text-danger">
-                                            @error('fname')
+                                            @error('first_name')
                                             {{ $message }}
                                             @enderror
                                         </span>
-                                        <input value="{{ old('lname') }}" type="text" class="form-control border-l-4" name="lname" placeholder="Last Name" >
+                                        <input value="{{ old('last_name') }}" type="text" class="form-control border-l-4" name="last_name" placeholder="Last Name" >
                                         <span class="text-danger">
-                                            @error('lname')
+                                            @error('last_name')
                                             {{ $message }}
                                             @enderror
                                         </span>
@@ -32,32 +32,28 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3 ">Date Of Birth :</label>
-                                        <input value="{{old('birth_date')}}" type="date"  class="form-control border-l-4 @error('birth_date') is-invalid @enderror" name="birth_date" >
+                                        <input value="{{old('date_of_birth')}}" type="date"  class="form-control border-l-4 @error('date_of_birth') is-invalid @enderror" name="date_of_birth" >
                                         <div class="input-group input-group-outline mb-3">
                                             <span class="text-danger">
-                                                @error('birth_date')
+                                                @error('date_of_birth')
                                                 {{ $message }}
                                                 @enderror
                                             </span>
                                         </div>
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="input-group input-group-outline mb-3">Gender:</label>
-                                        <input value="{{old('gender')}}" type="text" class="form-control border-l-4 @error('gender') is in-valid @enderror" name="gender"  >
-                                        <div class="input-group input-group-outline mb-3">
-                                            <span class="tex-danger">
-                                                @error('gender')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
-                                        </div>
+                                        <label class="input-group input-group-outline mb-3">Gender :</label>
+                                        <select class="form-control @error('gender') is-invalid @enderror" name="gender" >
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Contact No:</label>
-                                        <input value="{{old('contact')}}" type="text" class="form-control @error('contact') is-invalid @enderror" name="contact"   >
+                                        <input value="{{old('contact_number')}}" type="text" class="form-control @error('contact_number') is-invalid @enderror" name="contact_number"   >
                                         <div class="input-group input-group-outline mb-3">
                                             <span class="text-danger">
-                                                @error('contact')
+                                                @error('contact_number')
                                                 {{ $message }}
                                                 @enderror
                                             </span>
@@ -78,7 +74,7 @@
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Blood Type :</label>
 
-                                        <select class="form-control" name="blood_type" >
+                                        <select class="form-control" name="blood_type_id" >
                                           @foreach($blood_type as $data )
                                                 <option value="{{$data->id}}">{{$data->blood_group}} </option>
                                             @endforeach
@@ -101,7 +97,7 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Address :</label>
-                                        <textarea value="{{old('address')}}" class="form-control @error('address') is-invalid @enderror" name="address"  ></textarea>
+                                        <textarea  class="form-control @error('address') is-invalid @enderror" name="address"  >{{old('address')}}</textarea>
                                         <div class="input-group input-group-outline mb-3">
                                             <span class="text-danger">
                                                 @error('address')
@@ -113,10 +109,10 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Hospital :</label>
-                                        <input value="{{old('hospital')}}" type="text" class="form-control @error('hospital') is-invalid @enderror" name="hospital"  >
+                                        <input value="{{old('hospital_name')}}" type="text" class="form-control @error('hospital_name') is-invalid @enderror" name="hospital_name"  >
                                         <div class="input-group input-group-outline mb-3">
                                             <span class="text-danger">
-                                                @error('hospital')
+                                                @error('hospital_name')
                                                 {{ $message }}
                                                 @enderror
                                             </span>

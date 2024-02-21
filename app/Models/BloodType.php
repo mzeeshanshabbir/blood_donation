@@ -12,7 +12,6 @@ class BloodType extends Model
 
     protected $fillable = [
         'blood_group',
-        'rh_factor',
     ];
 
 

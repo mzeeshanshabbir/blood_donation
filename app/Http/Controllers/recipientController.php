@@ -15,18 +15,9 @@ class recipientController extends Controller
     public function addRecipient(RecipientRequest $req)
     {
 
-        $recipients = Recipient::create([
-            'first_name' => $req->fname,
-            'last_name' => $req->lname,
-            'date_of_birth' => $req->birth_date,
-            'gender' => $req->gender,
-            'contact_number' => $req->contact,
-            'email' => $req->email,
-            'blood_type_id' => $req->blood_type,
-            'required_units' => $req->required_units,
-            'address' => $req->address,
-            'hospital_name' => $req->hospital,
-        ]);
+        $validate = $req->validated();
+
+        $recipients = Recipient::updateOrCreate(['id'=>$req->id],$validate);
 
         if ($recipients) {
             return redirect()->route('show.recipients');
@@ -66,6 +57,7 @@ class recipientController extends Controller
 
     public function RecipEditForm(string $id){
         $recipients = Recipient::find($id);
-        return view('edit_recipient',compact('recipients'));
+        $blood_type = BloodType::all();
+        return view('edit_recipient',compact('recipients','blood_type'));
     }
 }

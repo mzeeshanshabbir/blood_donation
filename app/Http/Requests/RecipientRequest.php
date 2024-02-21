@@ -23,16 +23,16 @@ class RecipientRequest extends FormRequest
     {
         return [
 
-            'fname' => 'required',
-            'lname' => 'required',
-            'birth_date' => 'required|date',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'date_of_birth' => 'required|date',
             'gender' => 'required',
-            'contact' => 'required|numeric',
+            'contact_number' => 'required|numeric',
             'email' => 'required|email',
-            'blood_type' => 'required',
+            'blood_type_id' => 'required',
             'required_units' => 'required|numeric',
             'address' => 'required',
-            'hospital' => 'required',
+            'hospital_name' => 'required',
 
         ];
     }

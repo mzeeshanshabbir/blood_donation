@@ -22,14 +22,14 @@ class DonorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'fname' => 'required',
-            'lname' => 'required',
-            'birth_date' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'date_of_birth' => 'required',
             'gender' => 'required',
-            'contact' => 'required',
+            'contact_number' => 'required',
             'email' => 'required|email',
-            'blood_type' => 'required',
-            'donation_date' => 'required',
+            'blood_type_id' => 'required',
+            'last_donation_date' => 'required',
             'address' => 'required',
         ];
     }
