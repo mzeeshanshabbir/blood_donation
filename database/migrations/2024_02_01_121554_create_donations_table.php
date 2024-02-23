@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('donor_id');
             $table->date('donation_date');
-            $table->integer('blood_type_id');
+            $table->string('blood_type_id');
             $table->float('quantity_in_ml');
             $table->string('status');
             $table->timestamps();

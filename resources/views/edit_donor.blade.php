@@ -62,6 +62,7 @@
                                         </span>
                                         </div>
                                     </div>
+
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Email :</label>
                                         <input value="{{$donor->email}}" type="email" class="form-control @error('email') is-invalid @enderror" name="email"  >
@@ -74,16 +75,14 @@
                                         </div>
                                     </div>
 
-
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Blood Type :</label>
                                         <select class="form-control" name="blood_type_id" >
-                                            @foreach( $blood_type as  $data)
-                                                <option value="{{ $data->id}}">{{ $data->blood_group }}</option>
+                                            @foreach( $blood_types as  $blood_type)
+                                                <option value="{{ $blood_type}}">{{ $blood_type}}</option>
                                             @endforeach
                                         </select>
                                     </div>
-
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Last Donation Date :</label>

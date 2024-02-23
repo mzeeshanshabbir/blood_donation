@@ -16,10 +16,11 @@
                                     @csrf
                                     {{--@method('PUT')--}}
                                     <div class="input-group input-group-outline mb-3">
+                                        <input type="hidden" name="id" value="{{$donor->id}}">
                                         <label class="input-group input-group-outline mb-3">Donor :</label>
                                         <select class="form-control" name="donor_id" >
                                             @foreach($donor as $data)
-                                                <option value="{{$data->id}}">{{ $data->first_name }}   {{$data->last_name}} </option>
+                                                <option value="{{$data->id}}">{{ $data->first_name }} </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -34,8 +35,8 @@
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Blood Type :</label>
                                         <select class="form-control" name="blood_type_id" >
-                                            @foreach($blood_type as $dataa )
-                                                <option value="{{$dataa->id}}">{{$dataa->blood_group}} </option>
+                                            @foreach($blood_types as $blood_type )
+                                                <option value="{{$blood_type}}">{{$blood_type}} </option>
                                             @endforeach
 
                                         </select>

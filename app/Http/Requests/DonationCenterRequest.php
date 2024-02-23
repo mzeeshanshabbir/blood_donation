@@ -25,7 +25,7 @@ class DonationCenterRequest extends FormRequest
 
             'center_name' => 'required',
             'location' =>'required' ,
-            'contact' => 'required|numeric',
+            'contact_number' => 'required|numeric',
             'email' => 'required|email',
 
         ];

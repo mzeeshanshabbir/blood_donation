@@ -7,23 +7,20 @@ use App\Http\Requests\DonationRecordRequest;
 use App\Models\DonationRecord;
 use App\Models\Donation;
 use App\Models\Recipient;
+use App\Models\Donor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class donationrecordController extends Controller
+class DonationRecordController extends Controller
 {
 
     // Method For Add Donation Record.
     public function addDonationRecord(DonationRecordRequest $req){
 
+        $validate = $req->validated();
+        $records = DonationRecord::updateOrCreate(['id'=>$req->id],$validate);
 
-        $records =  DonationRecord::create([
-            'donation_id' => $req->donation_id,
-            'recipient_id' => $req->recipient_id,
-            'quantity_transfused' => $req->quantity_transfused,
-            'transfusion_date' => $req->transfusion_date,
-            'transfusion_status' => $req->transfusion_status,
-        ]);
+
         if($records){
             return redirect()->route('show.donationrecord');
         }else{
@@ -57,12 +54,14 @@ class donationrecordController extends Controller
     // Method For Show Add And Edit Forms.
     public function RecordForm(){
         $don_date = Donation::all();
-        $recip_date = Recipient::all();
-        return view('add_donation_record',compact('don_date','recip_date'));
+        $recip_name = Recipient::all();
+        return view('add_donation_record',compact('don_date','recip_name'));
     }
 
     public function RecordEditForm(string $id){
         $records = DonationRecord::find($id);
-        return view('eidt_donation_record',compact('records'));
+        $don_date = Donation::all();
+        $recip_name = Recipient::all();
+        return view('edit_donation_record',compact('records','don_date','recip_name'));
     }
 }

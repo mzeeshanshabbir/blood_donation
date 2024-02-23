@@ -7,7 +7,7 @@
                     <div class="card my-4">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                                <h6 class="text-white text-capitalize ps-3">Add Donation Center</h6>
+                                <h6 class="text-white text-capitalize ps-3">Edit Donation Center</h6>
                             </div>
                         </div>
                         <div class="card-body px-0 pb-2">
@@ -42,10 +42,10 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Contact Number :</label>
-                                        <input value="{{ $center->contact_number }}" type="text" class="form-control @error('contact') is-invalid @enderror" name="contact"  >
+                                        <input value="{{ $center->contact_number }}" type="text" class="form-control @error('contact_number') is-invalid @enderror" name="contact_number"  >
                                         <div class="input-group input-group-outline mb-3">
                                             <span class="text-danger">
-                                            @error('contact')
+                                            @error('contact_number')
                                                 {{ $message }}
                                                 @enderror
                                         </span>

@@ -16,7 +16,7 @@
                                     @csrf
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3"> Center Name :</label>
-                                        <input value="{{ old('donor_id') }}" type="text" class="form-control border-l-4 @error('center_name') is-invalid @enderror" name="center_name"  >
+                                        <input value="{{ old('center_name') }}" type="text" class="form-control border-l-4 @error('center_name') is-invalid @enderror" name="center_name"  >
                                         <div class="input-group input-group-outline mb-3">
                                             <span class="text-danger">
                                                 @error('center_name')
@@ -41,10 +41,10 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Contact Number :</label>
-                                        <input value="{{old('contact')}}" type="text" class="form-control @error('contact') is-invalid @enderror" name="contact"  >
+                                        <input value="{{old('contact_number')}}" type="text" class="form-control @error('contact_number') is-invalid @enderror" name="contact_number"  >
                                          <div class="input-group input-group-outline mb-3">
                                             <span class="text-danger">
-                                            @error('contact')
+                                            @error('contact_number')
                                             {{ $message }}
                                             @enderror
                                         </span>

@@ -44,9 +44,7 @@ class DonorController extends Controller
 
     // Method For Show Table Data.
     public function showDonors(){
-        $donors = Donor::with('BloodType')->get();
-     // echo $donors->blood_group;
-     //dd([$donors]);
+        $donors = Donor::all();
         return view('donors_table',['data' => $donors]);
     }
 
@@ -60,10 +58,9 @@ class DonorController extends Controller
 
     public function DonorEditForm(string $id){
         $donor = Donor::find($id);
-        $blood_type = BloodType::all();
-        return view('edit_donor',compact('donor','blood_type'));
+        $blood_types = Donor::BLOOD_TYPE;
+        return view('edit_donor',compact('donor','blood_types'));
     }
-
 
 
 }

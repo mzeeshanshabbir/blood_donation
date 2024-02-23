@@ -9,7 +9,7 @@ use App\Models\Donor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class donationController extends Controller
+class DonationController extends Controller
 {
 
     // Method For Add Donation.
@@ -55,15 +55,15 @@ class donationController extends Controller
     public function DonationForm()
     {
         $donor = Donor::all();
-        $blood_type = BloodType::all();
-        return view('add_donation',compact('donor','blood_type'));
+        $blood_types = Donation::BLOOD_TYPE;
+        return view('add_donation',compact('donor','blood_types'));
     }
 
     public function DonationEditForm(string $id)
     {
         $donations = Donation::find($id);
-        $donor = Donor::all();
-        $blood_type = BloodType::all();
-        return view('edit_donation',compact('donations','donor','blood_type'));
+        $donor = Donation::BLOOD_TYPE;
+        $blood_types = BloodType::all();
+        return view('edit_donation',compact('donations','donor','blood_types'));
     }
 }

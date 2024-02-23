@@ -5,22 +5,19 @@ namespace App\Http\Controllers;
 use App\Http\Requests\DonationCenterRequest;
 use App\Models\Donation;
 use App\Models\donationcenter;
+use App\Models\Recipient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Donor;
 
-class donationcenterController extends Controller
+class DonationCenterController extends Controller
 {
 
     // Method For Add Donation Center.
     public function addDonationCenter(DonationCenterRequest $req){
 
-        $center = DonationCenter::create([
-            'center_name' => $req->center_name,
-            'location' => $req->location,
-            'contact_number' => $req->contact,
-            'email' => $req->email,
-        ]);
-
+       $validate = $req->validated();
+       $center = DonationCenter::updateOrCreate(['id'=>$req->id],$validate);
         if($center){
             return redirect()->route('show.donationcenter');
         }else{

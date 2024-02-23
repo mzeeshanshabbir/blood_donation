@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('gender');
             $table->bigInteger('contact_number');
             $table->string('email')->unique();
-            $table->integer('blood_type_id');
+            $table->string('blood_type_id');
             $table->date('last_donation_date');
             $table->string('address');
             $table->timestamps();

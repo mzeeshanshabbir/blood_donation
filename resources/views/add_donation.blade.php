@@ -14,7 +14,6 @@
                             <div class="table-responsive p-0">
                                 <form method="POST" action="{{ route('add.donation') }}" class="p-3">
                                     @csrf
-{{--                                    @method('PUT')--}}
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Donor :</label>
                                         <select class="form-control" name="donor_id" >
@@ -34,8 +33,8 @@
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Blood Type :</label>
                                         <select class="form-control" name="blood_type_id" >
-                                            @foreach($blood_type as $dataa )
-                                                <option value="{{$dataa->id}}">{{$dataa->blood_group}} </option>
+                                            @foreach($blood_types as $blood_type )
+                                                <option value="{{$blood_type}}">{{$blood_type}} </option>
                                             @endforeach
 
                                         </select>

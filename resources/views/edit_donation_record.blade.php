@@ -15,29 +15,32 @@
                                 <form method="POST" action="{{ route('add.donation_record') }}" class="p-3">
                                     @csrf
 
+                                    <input type="hidden" name="id" value="{{ $records->id }}">
+
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="input-group input-group-outline mb-3">Donation Date:</label>
-                                        <select class="form-control @error('donation_id') is-invalid @enderror" name="donation_id" >
-{{--                                            @foreach( $don_date as  $data)--}}
-{{--                                                <option value="{{ $data->id}}">{{ $data->donation_date}}</option>--}}
-{{--                                            @endforeach--}}
+                                        <label class="input-group input-group-outline mb-3">Donation Date :</label>
+                                        <select class="form-control" name="donation_id" >
+                                            @foreach( $don_date as  $data)
+                                                <option value="{{ $data->id}}">{{ $data->donation_date }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="input-group input-group-outline mb-3">Recipient Name :</label>
-                                        <select class="form-control" name="recipient_id " >
-{{--                                            @foreach( $recip_date as  $dataa)--}}
-{{--                                                <option value="{{ $dataa->id}}">{{ $dataa->first_name}}    {{$dataa->last_name}}</option>--}}
-{{--                                            @endforeach--}}
+                                        <label class="input-group input-group-outline mb-3">Recipient Name</label>
+                                        <select class="form-control" name="recipient_id" >
+                                            @foreach( $recip_name as  $data)
+                                                <option value="{{ $data->id}}">{{ $data->first_name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
+
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Quantity Transfused :</label>
-                                        <input value="{{$records->quantity_transfused}}" type="number" class="form-control @error('quantity') is-invalid @enderror" name="quantity"  >
+                                        <input value="{{$records->quantity_transfused}}" type="number" class="form-control @error('quantity_transfused') is-invalid @enderror" name="quantity_transfused"  >
                                         <div class="input-group input-group-outline mb-3">
                                             <span class="text-danger">
-                                                @error('quantity')
+                                                @error('quantity_transfused')
                                                 {{ $message }}
                                                 @enderror
                                             </span>
@@ -46,10 +49,10 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3 ">Transfusion Date:</label>
-                                        <input value="{{$records->transfusion_date}}" type="date"  class="form-control border-l-4 @error('date') is-invalid @enderror" name="date"  >
+                                        <input value="{{$records->transfusion_date}}" type="date"  class="form-control border-l-4 @error('transfusion_date') is-invalid @enderror" name="transfusion_date"  >
                                         <div class="input-group input-group-outline mb-3">
                                             <span class="text-danger">
-                                                @error('date')
+                                                @error('transfusion_date')
                                                 {{ $message }}
                                                 @enderror
                                             </span>
@@ -58,8 +61,7 @@
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Status:</label>
-                                        <select  class="form-control @error('status') is-invalid @enderror" name="status" >
-                                            <option value="">{{$records->transfusion_status}}</option>
+                                        <select  class="form-control @error('transfusion_status') is-invalid @enderror" name="transfusion_status" >
                                             <option value="Succesfull">Succesfull</option>
                                             <option value="Pending">Pending</option>
                                             <option value="Rejected">Rejected</option>
