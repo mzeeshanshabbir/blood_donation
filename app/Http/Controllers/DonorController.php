@@ -54,8 +54,8 @@ class DonorController extends Controller
 
     // Methods For Show Edit And Add Forms.
     public function DonorsForm(){
-        $blood_type = BloodType::all();
-        return view('add_donor',compact('blood_type'));
+        $blood_types = Donor::BLOOD_TYPE;//BloodType::all();
+        return view('add_donor',compact('blood_types'));
     }
 
     public function DonorEditForm(string $id){

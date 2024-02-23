@@ -13,7 +13,16 @@ class Donor extends Model
 
 
     use HasFactory;
-
+    public const BLOOD_TYPE = [
+        'A+',
+        'A-',
+        'B+',
+        'B-',
+        'AB+',
+        'AB-',
+        'O+',
+        'O-',
+    ];
     protected $fillable = [
       'first_name',
       'last_name',
@@ -28,9 +37,9 @@ class Donor extends Model
     ];
 
 
-    public function BloodType()
+    public function Blood_Type()
     {
-        return $this->belongsTo(BloodType::class);
+        return $this->belongsTo(BloodType::class,'blood_type_id');
     }
 
 }
