@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Recipient;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class DonationRecord extends Model
 {
@@ -19,9 +20,9 @@ class DonationRecord extends Model
         'transfusion_status',
     ];
 
-    public function Recipientt(): BelongsTo
+    public function Recipients(): hasOne
     {
-        return $this->belongsTo(Recipient::class,'id','recipient_id');
+        return $this->hasOne(Recipient::class,'id');
     }
 
 }

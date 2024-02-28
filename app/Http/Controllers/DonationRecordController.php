@@ -48,8 +48,16 @@ class DonationRecordController extends Controller
 
     // Method For Show Table Data.
     public function showdonationRecord(){
-        $records = DonationRecord::all();
-        return view('donation_records_table',['data' => $records]);
+//        $recipients = DonationRecord::find(2);
+//        echo $recipients->Recipients->first_name;
+//        dd($recipients);
+
+        $recipients = DonationRecord::with('Recipients');
+        dd($recipients);
+
+
+
+//        return view('donation_records_table',['data' => $records]);
     }
 
 
