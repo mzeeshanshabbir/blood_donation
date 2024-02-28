@@ -41,6 +41,7 @@
                                         </span>
                                         </div>
                                     </div>
+
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Password :</label>
                                         <input value="{{ $user->password }}" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  >
@@ -75,4 +76,6 @@
                 </div>
                 <div class="col-1"></div>
             </div>
+        </div>
+    </main>
 </x-app-layout>

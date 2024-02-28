@@ -77,5 +77,6 @@
                 </div>
                 <div class="col-1"></div>
             </div>
-    </main>
+        </div>
+      </main>
 </x-app-layout>

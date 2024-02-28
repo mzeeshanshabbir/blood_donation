@@ -23,12 +23,10 @@
                                         </select>
                                     </div>
 
-
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3"> Donation Date :</label>
                                         <input value="{{old('donation_date')}}" type="date" class="form-control" name="donation_date" >
                                     </div>
-
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Blood Type :</label>
@@ -71,4 +69,6 @@
                 </div>
                 <div class="col-1"></div>
             </div>
+        </div>
+    </main>
 </x-app-layout>

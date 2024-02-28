@@ -3,7 +3,7 @@
 namespace App\Models;
 
 
-use App\Models\BloodType;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -36,10 +36,5 @@ class Donor extends Model
 
     ];
 
-
-    public function Blood_Type()
-    {
-        return $this->belongsTo(BloodType::class,'blood_type_id');
-    }
 
 }

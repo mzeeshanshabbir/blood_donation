@@ -16,9 +16,7 @@
 
                             <form method="POST" action="{{route('add.user')}}" class="p-3">
                                 @csrf
-                                <br>
                                 <div class="input-group input-group-outline mb-3">
-{{--                                    <input type="hidden" value="">--}}
                                     <label class="input-group input-group-outline mb-3">Name :</label>
                                     <input value="{{ old('name') }}" type="text" class="form-control border-l-4 @error('name') is-invalid @enderror" name="name"  >
                                     <div class="input-group input-group-outline mb-3">
@@ -41,6 +39,7 @@
                                         </span>
                                     </div>
                                 </div>
+
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="input-group input-group-outline mb-3">Password :</label>
                                     <input value="{{old('password')}}" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  >
@@ -75,4 +74,6 @@
             </div>
             <div class="col-1"></div>
         </div>
-    </x-app-layout>
+    </div>
+</main>
+</x-app-layout>

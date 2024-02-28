@@ -8,18 +8,21 @@ use App\Models\DonationRecord;
 use App\Models\Donation;
 use App\Models\Recipient;
 use App\Models\Donor;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class DonationRecordController extends Controller
 {
 
+//    $recipient = Recipient::find()
+
     // Method For Add Donation Record.
     public function addDonationRecord(DonationRecordRequest $req){
 
         $validate = $req->validated();
         $records = DonationRecord::updateOrCreate(['id'=>$req->id],$validate);
-
 
         if($records){
             return redirect()->route('show.donationrecord');

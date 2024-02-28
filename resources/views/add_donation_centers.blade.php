@@ -38,7 +38,6 @@
                                         </div>
                                     </div>
 
-
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Contact Number :</label>
                                         <input value="{{old('contact_number')}}" type="text" class="form-control @error('contact_number') is-invalid @enderror" name="contact_number"  >
@@ -48,9 +47,8 @@
                                             {{ $message }}
                                             @enderror
                                         </span>
-                                         </div>
-                                        </div>
-
+                                      </div>
+                                    </div>
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3 ">Email :</label>
@@ -74,4 +72,6 @@
                 </div>
                 <div class="col-1"></div>
             </div>
-        </x-app-layout>
+        </div>
+    </main>
+</x-app-layout>

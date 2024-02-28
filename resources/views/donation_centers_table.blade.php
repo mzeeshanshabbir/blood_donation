@@ -2,7 +2,7 @@
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
-                <button type="button" class="btn btn-outline-primary btn-sm mb-0"><a href="/add-donation_center">Add  Donation Center</a></button>
+                <button type="button" class="btn btn-outline-primary btn-sm mb-0"><a href="/add-donation_center">Add Donation Center</a></button>
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         <h6>Donation Centers table</h6>
@@ -12,7 +12,6 @@
                             <table class="table align-items-center mb-0">
                                 <thead>
                                 <tr>
-                                    {{--<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id</th>--}}
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Center Name</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Location</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Contact Number</th>

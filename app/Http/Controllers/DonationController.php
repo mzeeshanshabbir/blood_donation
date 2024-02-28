@@ -62,8 +62,8 @@ class DonationController extends Controller
     public function DonationEditForm(string $id)
     {
         $donations = Donation::find($id);
-        $donor = Donation::BLOOD_TYPE;
-        $blood_types = BloodType::all();
+        $donor = Donor::all();
+        $blood_types = Donation::BLOOD_TYPE;
         return view('edit_donation',compact('donations','donor','blood_types'));
     }
 }

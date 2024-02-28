@@ -41,6 +41,7 @@
                                             </span>
                                         </div>
                                     </div>
+
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Gender :</label>
                                         <select class="form-control @error('gender') is-invalid @enderror" name="gender" >
@@ -48,6 +49,7 @@
                                             <option value="Female">Female</option>
                                         </select>
                                     </div>
+
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Contact No:</label>
                                         <input value="{{old('contact_number')}}" type="text" class="form-control @error('contact_number') is-invalid @enderror" name="contact_number"   >
@@ -59,6 +61,7 @@
                                             </span>
                                         </div>
                                     </div>
+
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Email :</label>
                                         <input value="{{old('email')}}" type="email" class="form-control @error('email') is-invalid @enderror" name="email" >
@@ -78,9 +81,7 @@
                                           @foreach($blood_types as $blood_type )
                                                 <option value="{{$blood_type}}">{{$blood_type}} </option>
                                             @endforeach
-
                                         </select>
-
                                     </div>
 
                                     <div class="input-group input-group-outline mb-3">
@@ -129,4 +130,6 @@
                 </div>
                 <div class="col-1"></div>
             </div>
+        </div>
+    </main>
 </x-app-layout>

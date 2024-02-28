@@ -14,7 +14,6 @@
                             <div class="table-responsive p-0">
                                 <form method="POST" action="{{ route('add.donation_record') }}" class="p-3">
                                     @csrf
-
                                     <input type="hidden" name="id" value="{{ $records->id }}">
 
                                     <div class="input-group input-group-outline mb-3">
@@ -78,5 +77,6 @@
                 </div>
                 <div class="col-1"></div>
             </div>
+        </div>
     </main>
 </x-app-layout>

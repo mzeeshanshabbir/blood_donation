@@ -61,6 +61,7 @@
                                         </span>
                                         </div>
                                     </div>
+
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Email :</label>
                                         <input value="{{old('email')}}" type="email" class="form-control @error('email') is-invalid @enderror" name="email"  >
@@ -73,7 +74,6 @@
                                         </div>
                                     </div>
 
-
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Blood Type :</label>
                                         <select class="form-control" name="blood_type_id" >
@@ -82,7 +82,6 @@
                                             @endforeach
                                         </select>
                                     </div>
-
 
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="input-group input-group-outline mb-3">Last Donation Date :</label>

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\DonorRequest;
-use App\Models\BloodType;
 use App\Models\Donor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -52,7 +51,7 @@ class DonorController extends Controller
 
     // Methods For Show Edit And Add Forms.
     public function DonorsForm(){
-        $blood_types = Donor::BLOOD_TYPE;//BloodType::all();
+        $blood_types = Donor::BLOOD_TYPE;
         return view('add_donor',compact('blood_types'));
     }
 
