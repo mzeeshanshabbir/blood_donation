@@ -22,7 +22,11 @@ class DonationRecord extends Model
 
     public function Recipients(): hasOne
     {
-        return $this->hasOne(Recipient::class,'id');
+        return $this->hasOne(Recipient::class,'id','recipient_id');
+    }
+    public function Donations(): hasOne
+    {
+        return $this->hasOne(Donation::class,'id','donation_id');
     }
 
 }

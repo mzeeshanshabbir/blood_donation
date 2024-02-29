@@ -7,6 +7,7 @@
                     <div class="card-header pb-0">
                         <h6>Donation Records table</h6>
                     </div>
+{{--                    @dd($data)--}}
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
                             <table class="table align-items-center mb-0">
@@ -25,11 +26,11 @@
                                 @foreach($data as $id => $records)
                                     <tr>
                                         <td class="align-middle">
-                                            {{ $records->donation_id }}
+                                            {{ $records->Donations->donation_date }}
                                         </td>
 
                                         <td  class="align-middle">
-                                            {{ $records->recipient_id }}
+                                            {{ $records->Recipients->first_name }}  {{$records->Recipients->last_name}}
                                         </td>
                                         <td class="align-middle text-center text-sm">
                                             {{ $records->quantity_transfused}}

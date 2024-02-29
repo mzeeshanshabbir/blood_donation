@@ -13,14 +13,15 @@ use App\Http\Controllers\DonationCenterController;
 use App\Http\Controllers\DonationRecordController;
 use App\Http\Controllers\TestController;
 
-// Pre Made Routes.
-Route::get('/', function () {
+    // Pre Made Routes.
+    Route::get('/', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-Route::middleware('auth')->group(function () {
+    })->middleware(['auth', 'verified'])->name('dashboard');
+    Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
 
     // Routes For Inserting Data.
     Route::post('/add_user',[UserController::class,'AddUser'])->name('add.user');
@@ -75,11 +76,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit-donation-center/{id}',[DonationCenterController::class,'CenterEditForm'])->name('center.edit.form');
     Route::get('/edit-donation-record/{id}',[DonationRecordController::class,'RecordEditForm'])->name('record.edit.form');
 
+    });
 
-});
-Route::get('/logout',[logoutController::class,'logout'])->name('logoutt');
-require __DIR__.'/auth.php';
-Route::get('/register',[linkController::class,'showregister']);
+
+    Route::get('/logout',[logoutController::class,'logout'])->name('logoutt');
+    require __DIR__.'/auth.php';
+    Route::get('/register',[linkController::class,'showregister']);
 
 
 
